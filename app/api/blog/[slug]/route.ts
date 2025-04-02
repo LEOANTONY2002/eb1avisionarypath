@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import connectDB from "../../../lib/mongodb";
 import Blog from "../../../models/Blog";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { slug: string } }
-) {
+type tParams = Promise<{ slug: string }>;
+
+export async function GET(request: Request, { params }: { params: tParams }) {
   try {
     await connectDB();
-    const blog = await Blog.findOne({ slug: params.slug });
+    const { slug } = await params;
+    const blog = await Blog.findOne({ slug });
 
     if (!blog) {
       return NextResponse.json(
