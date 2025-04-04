@@ -2,19 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/images/logo.png";
+import Chevron from "@/public/images/chevron.svg";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-10 bg-[#ffffff9f] backdrop-blur-md">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-blue-600">EB1A</span>
+            <Image src={Logo} width={120} alt={"EB1A Visionary Path"} />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -48,10 +51,16 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="/services"
+            href="/#services"
             className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
           >
             Services
+          </Link>
+          <Link
+            href="/#testimonials"
+            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
+          >
+            Testimonials
           </Link>
           <Link
             href="/blog"
@@ -59,20 +68,14 @@ export default function Header() {
           >
             Blog
           </Link>
-          <Link
-            href="/contact"
-            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            Contact
-          </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            href="/contact"
-            className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
-          >
-            Get Started
-          </Link>
+          <div className="flex sm:flex-row gap-4 items-center justify-center ">
+            <div className="w-max px-4 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-lg shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
+              <span className="">Contact</span>
+              <Image src={Chevron} alt={"Chevron Right"} />
+            </div>
+          </div>
         </div>
       </nav>
       {/* Mobile menu */}
@@ -90,11 +93,18 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="/services"
+            href="/#services"
             className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Services
+          </Link>
+          <Link
+            href="/#testimonials"
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Testimonials
           </Link>
           <Link
             href="/blog"
@@ -105,17 +115,10 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/contact"
             className="block rounded-md bg-blue-600 px-3 py-2 text-base font-medium text-white hover:bg-blue-500 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Get Started
+            Contact
           </Link>
         </div>
       </div>

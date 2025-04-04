@@ -44,6 +44,15 @@ export default function Home() {
       <div className="relative min-h-screen flex flex-col items-center justify-center py-20 px-4 sm:px-6 lg:px-28">
         <Image src={Logo} width={450} alt="Immigration success" priority />
         <Image src={cs} width={700} alt="Immigration success" priority />
+        <p className="text-black mt-5 text-2xl">
+          Talk to us:{" "}
+          <a
+            className="text-[#34A1FF]"
+            href="mailto:info@eb1avisionarypath.com"
+          >
+            info@eb1avisionarypath.com
+          </a>
+        </p>
       </div>
     </main>
   );
