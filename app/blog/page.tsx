@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CalendarIcon, UserIcon, TagIcon } from "@heroicons/react/24/outline";
 import Header from "../components/Header";
+import Loading from "@/app/loading";
 
 interface BlogPost {
   _id: string;
@@ -43,11 +44,7 @@ export default function BlogPage() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {

@@ -1,33 +1,36 @@
 "use client";
 
-import Link from "next/link";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
 export default function Pricing() {
   const tiers = [
     {
-      name: "Gold Plan",
-      id: "tier-gold",
+      name: "Silver Plan",
+      id: "tier-silver",
       href: "/contact",
-      price: { monthly: "499" },
+      price: { amount: "6,999", additional: "3,000" },
       description: "Basic Support",
       features: [
-        "Profile assessment",
-        "General eligibility guidance",
-        "Assistance in collecting evidence",
+        "4 Scholarly Articles",
+        "4 Memberships/Fellowships",
+        "2 Media Features",
+        "2 Awards",
       ],
       featured: false,
     },
     {
-      name: "Silver Plan",
-      id: "tier-silver",
+      name: "Gold Plan",
+      id: "tier-gold",
       href: "/contact",
-      price: { monthly: "999" },
+      price: { amount: "10,999", additional: "5,000" },
       description: "Comprehensive Support",
       features: [
-        "Everything in Gold",
-        "Strategic profile-building",
-        "Assistance in preparing recommendation letters",
+        "4 Scholarly Articles",
+        "6 Memberships/Fellowships",
+        "3 Media Features",
+        "4 Awards",
+        "Critical Role Documentation – 7 Support Letters",
+        "Judging – 30 Journal Papers",
       ],
       featured: true,
     },
@@ -35,19 +38,31 @@ export default function Pricing() {
       name: "Platinum Plan",
       id: "tier-platinum",
       href: "/contact",
-      price: { monthly: "1,999" },
+      price: { amount: "14,999", additional: "6,000" },
       description: "Premium & Personalized",
       features: [
-        "Everything in Silver",
-        "Personalized coaching and strategy calls",
-        "End-to-end evidence compilation and optimization",
+        "5 Scholarly Articles",
+        "6 Memberships/Fellowships",
+        "3 Media Features",
+        "4 Awards",
+        "5 Scholarly Articles",
+        "Critical Role Documentation – 7 Support Letters (Drafted)",
+        "Judging – 50 Journal Papers from Various Journals",
+        "Group Discount Available for 2+ Candidates",
+        "2 Virtual Speaking Opportunities",
+        "Original Contribution Letter (Drafted)",
+        "Final Merits Compilation",
+        "Attorney Introduction",
       ],
       featured: false,
     },
   ];
 
   return (
-    <div className="relative bg-gradient-to-br from-white via-blue-50/30 to-white py-24">
+    <div
+      id="pricing"
+      className="relative bg-gradient-to-br from-white via-blue-50/30 to-white py-24"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-purple-100/30 blur-3xl" />
@@ -84,20 +99,20 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-28 grid max-w-lg grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.name}
               className={`relative rounded-2xl p-8 ${
                 tier.featured
-                  ? "bg-gradient-to-br from-white via-blue-50 to-white shadow-xl scale-105 ring-2 ring-blue-500/20"
+                  ? "bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] shadow-xl scale-105 ring-2 ring-white"
                   : "bg-white text-gray-900 ring-1 ring-gray-200"
               }`}
             >
               {tier.featured && (
                 <>
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center rounded-full bg-blue-600 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
+                    <span className="inline-flex items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] px-4 py-1.5 text-xs font-medium text-white shadow-lg">
                       Most Popular
                     </span>
                   </div>
@@ -110,7 +125,7 @@ export default function Pricing() {
                   <h3
                     id={tier.id}
                     className={`text-lg font-semibold leading-8 ${
-                      tier.featured ? "text-blue-600" : "text-gray-900"
+                      tier.featured ? "text-[#0e3e69]" : "text-gray-900"
                     }`}
                   >
                     {tier.name}
@@ -118,7 +133,7 @@ export default function Pricing() {
                   {tier.featured && (
                     <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
                       <svg
-                        className="h-4 w-4 text-blue-600"
+                        className="h-4 w-4 text-[#0e3e69]"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -136,48 +151,68 @@ export default function Pricing() {
 
                 <p
                   className={`mt-4 text-sm leading-6 ${
-                    tier.featured ? "text-gray-600" : "text-gray-600"
+                    tier.featured ? "text-[#247cc8]" : "text-gray-600"
                   }`}
                 >
                   {tier.description}
                 </p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span
-                    className={`text-4xl font-bold tracking-tight ${
-                      tier.featured ? "text-blue-600" : "text-gray-900"
-                    }`}
-                  >
-                    ${tier.price.monthly}
-                  </span>
+                <div className="mt-6 flex items-center gap-x-2">
+                  {tier.featured ? (
+                    <p className="w-max bg-clip-text bg-gradient-to-r from-[#2c5797] to-[#ff2a4e]">
+                      <span
+                        className={
+                          "text-4xl font-bold tracking-tight text-transparent"
+                        }
+                      >
+                        ${tier.price.amount}
+                      </span>
+                    </p>
+                  ) : (
+                    <span
+                      className={
+                        "text-4xl font-bold tracking-tight text-gray-900"
+                      }
+                    >
+                      ${tier.price.amount}
+                    </span>
+                  )}
                   <span
                     className={`text-sm font-semibold leading-6 ${
-                      tier.featured ? "text-gray-600" : "text-gray-600"
+                      tier.featured ? "text-[#0e3e69]" : "text-gray-600"
                     }`}
                   >
-                    /month
+                    (Additional Cost: ~${tier.price.additional} Approx.)
                   </span>
-                </p>
-                <a
-                  href={tier.href}
-                  className={`mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all duration-200 ${
-                    tier.featured
-                      ? "bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600"
-                      : "bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600"
-                  }`}
-                >
-                  Get started
-                </a>
+                </div>
+
+                {tier.featured ? (
+                  <a
+                    href={tier.href}
+                    className={`mt-8 block rounded-xl px-6 py-4 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
+                  >
+                    Get started
+                  </a>
+                ) : (
+                  <div className="mt-6 cursor-pointer flex max-w-sm rounded-xl bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85] p-0.5 shadow-lg">
+                    <div className="flex flex-1 items-center justify-center font-bold text-xl bg-white px-6 py-3 rounded-xl">
+                      <div className="bg-clip-text w-max bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85]">
+                        <p className="text-transparent">Get started</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <ul
                   role="list"
                   className={`mt-8 space-y-3 text-sm leading-6 ${
                     tier.featured ? "text-gray-600" : "text-gray-600"
                   }`}
                 >
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
+                  {tier.features.map((feature, index) => (
+                    <li key={index} className="flex gap-x-3">
                       <CheckIcon
                         className={`h-6 w-5 flex-none ${
-                          tier.featured ? "text-blue-600" : "text-gray-400"
+                          tier.featured ? "text-[#34A1FF]" : "text-gray-400"
                         }`}
                         aria-hidden="true"
                       />

@@ -30,7 +30,10 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative max-w-screen-md min-h-screen flex flex-col items-center justify-center py-20 mx-auto ">
+      <div
+        id="home"
+        className="relative max-w-screen-md min-h-screen flex flex-col items-center justify-center py-20 mx-auto "
+      >
         <div className="inline-flex items-center rounded-full bg-white/60 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm font-medium ring-1 ring-inset ring-white/20 shadow-sm">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>

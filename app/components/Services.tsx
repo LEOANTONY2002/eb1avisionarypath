@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import SOL from "@/public/images/SOL.png";
 import aero from "@/public/images/aero.png";
@@ -25,7 +23,7 @@ const serviceContent = [
 
 export default function Services() {
   return (
-    <div className="relative pb-24 sm:pb-32 overflow-hidden ">
+    <div id="services" className="relative pb-24 sm:pb-32 overflow-hidden ">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-purple-500/5 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />

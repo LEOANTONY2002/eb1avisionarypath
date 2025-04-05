@@ -3,7 +3,10 @@ import Image from "next/image";
 
 const Mission = () => {
   return (
-    <div className="relative gap-12 flex flex-col-reverse w-screen lg:h-screen lg:flex-row">
+    <div
+      id="about"
+      className="relative gap-12 flex flex-col-reverse w-screen lg:h-screen lg:flex-row"
+    >
       <div className="w-[100vw] flex flex-col p-6 gap-6 justify-end lg:w-[50vw] lg:gap-12 lg:p-24">
         <div className="flex flex-col">
           <h1 className="text-2xl lg:text-5xl">Our</h1>

@@ -1,13 +1,102 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation"; // Use usePathname for Next.js 13
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/images/logo.png";
 import Chevron from "@/public/images/chevron.svg";
 
+const links = [
+  { href: "/#home", label: "Home" },
+  { href: "/#services", label: "Services" },
+  { href: "/#whyus", label: "Why Us" },
+  // { href: "/#about", label: "About" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
+];
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home"); // Set initial active section to "home"
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (sessionStorage.getItem("hash")) {
+      const hash = sessionStorage.getItem("hash");
+      if (hash) {
+        if (hash === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+      sessionStorage.removeItem("hash");
+    }
+
+    // Set up intersection observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let isAnyIntersecting = false;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            isAnyIntersecting = true;
+          }
+        });
+        if (!isAnyIntersecting && window.scrollY >= 100) {
+          setActiveSection("");
+        }
+      },
+      { threshold: 0.3 } // Trigger when 50% of the section is visible
+    );
+
+    // Observe all sections
+    links.forEach((link) => {
+      const sectionId = link.href.split("#")[1];
+      if (sectionId && sectionId !== "home") {
+        const element = document.getElementById(sectionId);
+        if (element) observer.observe(element);
+      }
+    });
+
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Initial check for scroll position
+    handleScroll();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
+
+  const handleNavigation = (href: string) => {
+    const [path, hash] = href.split("#");
+    if (pathname === path) {
+      if (hash === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = path;
+      sessionStorage.setItem("hash", hash);
+    }
+  };
+
+  const isActive = (href: string) => {
+    if (href === "/blog") return pathname === href;
+    const sectionId = href.split("#")[1];
+    return activeSection === sectionId;
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-10 bg-[#ffffff9f] backdrop-blur-md">
@@ -44,30 +133,19 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <Link
-            href="/"
-            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="/#services"
-            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="/#testimonials"
-            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="/blog"
-            className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors"
-          >
-            Blog
-          </Link>
+          {links.map((link) => (
+            <span
+              key={link.href}
+              onClick={() => handleNavigation(link.href)}
+              className={`text-sm cursor-pointer font-semibold leading-6 transition-colors duration-300 ease-in-out ${
+                isActive(link.href)
+                  ? "text-[#ff3838]"
+                  : "text-gray-900 hover:text-[#922e2e]"
+              }`}
+            >
+              {link.label}
+            </span>
+          ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="w-max px-3 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-lg shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
@@ -83,37 +161,25 @@ export default function Header() {
         } transition-all duration-300 ease-in-out`}
       >
         <div className="space-y-1 px-2 pb-3 pt-2">
-          <Link
-            href="/"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/#services"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Services
-          </Link>
-          <Link
-            href="/#testimonials"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="/blog"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Blog
-          </Link>
+          {links.map((link) => (
+            <span
+              key={link.href}
+              className={`block rounded-md px-3 py-2 text-base font-medium transition-colors duration-300 ease-in-out ${
+                isActive(link.href)
+                  ? "text-[#FF6C85]"
+                  : "text-gray-900 hover:bg-gray-50 hover:text-[#ffada5]"
+              }`}
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleNavigation(link.href);
+              }}
+            >
+              {link.label}
+            </span>
+          ))}
           <Link
             href="/contact"
-            className="block rounded-md bg-blue-600 px-3 py-2 text-base font-medium text-white hover:bg-blue-500 transition-colors"
+            className="block rounded-md bg-blue-600 px-3 py-2 text-base font-medium text-white hover:bg-blue-500 transition-colors duration-300 ease-in-out"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact

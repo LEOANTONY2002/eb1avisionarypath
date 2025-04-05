@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
+import Loading from "../loading";
 
 interface Testimonial {
   _id: string;
@@ -51,14 +52,17 @@ export default function Testimonials() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[600px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      <div
+        id="testimonials"
+        className="flex justify-center items-center min-h-[600px]"
+      >
+        <Loading />
       </div>
     );
   }
 
   return (
-    <div className="relative py-24 bg-white overflow-hidden">
+    <div id="testimonials" className="relative py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           <div className="mx-auto max-w-2xl text-center">
