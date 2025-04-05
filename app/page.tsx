@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ChooseUs from "./components/ChooseUs";
 // import Mission from "./components/Mission";
 
 // Dynamically import client components with ssr disabled
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="bg-white">
       <Header />
       <Hero />
+      <ChooseUs />
       <Pricing />
       <Testimonials />
       <FAQ />

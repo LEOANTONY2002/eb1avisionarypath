@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-10 bg-[#ffffff9f] backdrop-blur-md">
       <nav
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between px-6 py-3 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -70,11 +70,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <div className="flex sm:flex-row gap-4 items-center justify-center ">
-            <div className="w-max px-4 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-lg shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
-              <span className="">Contact</span>
-              <Image src={Chevron} alt={"Chevron Right"} />
-            </div>
+          <div className="w-max px-3 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-lg shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
+            <span className="">Contact Us</span>
+            <Image src={Chevron} alt={"Chevron Right"} />
           </div>
         </div>
       </nav>
