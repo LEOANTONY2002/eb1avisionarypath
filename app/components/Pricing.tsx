@@ -1,6 +1,8 @@
 "use client";
 
 import { CheckIcon } from "@heroicons/react/24/outline";
+import aero from "@/public/images/aero.png";
+import Image from "next/image";
 
 export default function Pricing() {
   const tiers = [
@@ -69,33 +71,27 @@ export default function Pricing() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="flex items-center justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-light tracking-tight text-gray-900 sm:text-4xl">
-                Choose your path to EB1A success
-              </h2>
-              <p className="mt-6 text-lg text-gray-600">
-                Select the plan that aligns with your goals and timeline
-              </p>
-            </div>
-            <div className="hidden lg:block">
-              <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                <svg
-                  className="h-6 w-6 text-blue-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-            </div>
+        <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
+          <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
+            </span>
+            Pricing Plans
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Choose your path to EB1A success
+          </h2>
+          <p className="mt-3 text-sm leading-6 lg:leading-8 text-gray-600">
+            Select the plan that aligns with your goals and timeline
+          </p>
+          <div className="flex items-end justify-end w-full">
+            <Image
+              className="-mr-[5vw] lg:-mr-32 -mt-5 lg:-mt-12"
+              src={aero}
+              width={150}
+              alt={"Aero"}
+            />
           </div>
         </div>
 
@@ -103,7 +99,7 @@ export default function Pricing() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative rounded-2xl p-8 ${
+              className={`relative rounded-2xl p-8 m-4 ${
                 tier.featured
                   ? "bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] shadow-xl scale-105 ring-2 ring-white"
                   : "bg-white text-gray-900 ring-1 ring-gray-200"
@@ -124,7 +120,7 @@ export default function Pricing() {
                 <div className="flex items-center justify-between">
                   <h3
                     id={tier.id}
-                    className={`text-lg font-semibold leading-8 ${
+                    className={`text-2xl font-bold leading-8 ${
                       tier.featured ? "text-[#0e3e69]" : "text-gray-900"
                     }`}
                   >
@@ -150,13 +146,14 @@ export default function Pricing() {
                 </div>
 
                 <p
-                  className={`mt-4 text-sm leading-6 ${
+                  className={`mt-1 text-sm leading-6 ${
                     tier.featured ? "text-[#247cc8]" : "text-gray-600"
                   }`}
                 >
                   {tier.description}
                 </p>
-                <div className="mt-6 flex items-center gap-x-2">
+
+                {/* <div className="mt-6 flex items-center gap-x-2">
                   {tier.featured ? (
                     <p className="w-max bg-clip-text bg-gradient-to-r from-[#2c5797] to-[#ff2a4e]">
                       <span
@@ -183,12 +180,12 @@ export default function Pricing() {
                   >
                     (Additional Cost: ~${tier.price.additional} Approx.)
                   </span>
-                </div>
+                </div> */}
 
                 {tier.featured ? (
                   <a
                     href={tier.href}
-                    className={`mt-8 block rounded-xl px-6 py-4 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
+                    className={`mt-8 block rounded-xl px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
                   >
                     Get started
                   </a>

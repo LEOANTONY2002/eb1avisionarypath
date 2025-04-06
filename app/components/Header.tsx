@@ -137,10 +137,10 @@ export default function Header() {
             <span
               key={link.href}
               onClick={() => handleNavigation(link.href)}
-              className={`text-sm cursor-pointer font-semibold leading-6 transition-colors duration-300 ease-in-out ${
+              className={`text-sm cursor-pointer leading-6 transition-colors duration-300 ease-in-out ${
                 isActive(link.href)
-                  ? "text-[#ff3838]"
-                  : "text-gray-900 hover:text-[#922e2e]"
+                  ? "text-[#ff3838] font-extrabold"
+                  : "text-gray-900 hover:opacity-60 font-semibold"
               }`}
             >
               {link.label}

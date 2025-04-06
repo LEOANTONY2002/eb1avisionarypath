@@ -8,7 +8,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import { useState } from "react";
 import Calendar from "./Calendar"; // Make sure to create this component
 
-const playfair = Playfair_Display({ subsets: ["latin"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function Hero() {

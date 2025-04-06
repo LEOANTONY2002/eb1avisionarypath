@@ -12,8 +12,8 @@ export default async function seedDatabase() {
     console.log("Connected to MongoDB");
 
     // Clear existing data
-    await Blog.deleteMany({});
-    await Testimonial.deleteMany({});
+    // await Blog.deleteMany({});
+    // await Testimonial.deleteMany({});
 
     // Sample blog posts
     const blogPosts = [
@@ -119,101 +119,37 @@ export default async function seedDatabase() {
         name: "Dr. Rajesh Patel",
         position: "Senior Research Scientist",
         company: "Tech Innovations Inc.",
+        title: "Attention to Detail",
         testimonial:
           "EB1A Visionary Path helped me navigate the complex EB1A visa process. Their expertise and attention to detail made all the difference in my successful application.",
-        image: "/testimonials/rajesh-patel.jpg",
         visaType: "EB1A",
-        rating: 5,
       },
       {
         name: "Maria Garcia",
         position: "Professional Athlete",
         company: "Sports Excellence",
+        title: "Dedication to Client Success",
         testimonial:
           "The team at EB1A Visionary Path provided exceptional guidance throughout my O1A visa application. Their knowledge of immigration law and dedication to client success is outstanding.",
-        image: "/testimonials/maria-garcia.jpg",
         visaType: "O1A",
-        rating: 5,
       },
       {
         name: "Dr. James Wilson",
         position: "Medical Researcher",
         company: "Healthcare Innovations",
+        title: "Expertise in Immigration",
         testimonial:
           "Thanks to EB1A Visionary Path, I successfully obtained my EB2 NIW visa. Their expertise in immigration law and commitment to client success is truly remarkable.",
-        image: "/testimonials/james-wilson.jpg",
         visaType: "EB2 NIW",
-        rating: 5,
       },
       {
         name: "Dr. Li Wei",
         position: "AI Research Lead",
         company: "Future Tech Solutions",
+        title: "Profound Strategic Approach",
         testimonial:
           "The EB1A Visionary Path team's deep understanding of the EB1A requirements and their strategic approach to presenting my case was invaluable. I'm grateful for their support.",
-        image: "/testimonials/li-wei.jpg",
         visaType: "EB1A",
-        rating: 5,
-      },
-      {
-        name: "Sofia Rodriguez",
-        position: "Professional Dancer",
-        company: "Global Dance Academy",
-        testimonial:
-          "As an artist applying for the O1A visa, I needed specialized guidance. EB1A Visionary Path provided exactly that, helping me showcase my achievements effectively.",
-        image: "/testimonials/sofia-rodriguez.jpg",
-        visaType: "O1A",
-        rating: 5,
-      },
-      {
-        name: "Dr. Ahmed Hassan",
-        position: "Environmental Scientist",
-        company: "Green Earth Research",
-        testimonial:
-          "The EB2 NIW process seemed daunting, but EB1A Visionary Path made it manageable. Their expertise in immigration law and scientific fields was crucial to my success.",
-        image: "/testimonials/ahmed-hassan.jpg",
-        visaType: "EB2 NIW",
-        rating: 5,
-      },
-      {
-        name: "Dr. Elena Petrova",
-        position: "Quantum Computing Expert",
-        company: "Quantum Tech Labs",
-        testimonial:
-          "EB1A Visionary Path helped me present my research contributions effectively for the EB1A visa. Their attention to detail and understanding of academic achievements was exceptional.",
-        image: "/testimonials/elena-petrova.jpg",
-        visaType: "EB1A",
-        rating: 5,
-      },
-      {
-        name: "Carlos Mendoza",
-        position: "Professional Coach",
-        company: "Elite Sports Academy",
-        testimonial:
-          "The O1A visa process for sports professionals is unique, but EB1A Visionary Path handled it perfectly. They understood my achievements and presented them effectively.",
-        image: "/testimonials/carlos-mendoza.jpg",
-        visaType: "O1A",
-        rating: 5,
-      },
-      {
-        name: "Dr. Yuki Tanaka",
-        position: "Biotechnology Researcher",
-        company: "BioTech Solutions",
-        testimonial:
-          "EB1A Visionary Path' expertise in the EB2 NIW category was crucial for my application. They helped me demonstrate how my research benefits the United States.",
-        image: "/testimonials/yuki-tanaka.jpg",
-        visaType: "EB2 NIW",
-        rating: 5,
-      },
-      {
-        name: "Dr. Marcus Schmidt",
-        position: "Space Technology Expert",
-        company: "Space Innovations Corp",
-        testimonial:
-          "The EB1A Visionary Path team's understanding of both immigration law and scientific achievements was invaluable. They helped me present my case effectively.",
-        image: "/testimonials/marcus-schmidt.jpg",
-        visaType: "EB1A",
-        rating: 5,
       },
     ];
 

@@ -27,7 +27,7 @@ const content = [
 const ChooseUs = () => {
   return (
     <div id="whyus" className="mx-auto my-32 max-w-7xl px-6 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
         <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -38,13 +38,13 @@ const ChooseUs = () => {
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Why Choose Us
         </h2>
-        <p className="mt-3 text-sm leading-8 text-gray-600">
+        <p className="mt-3 text-sm leading-6 lg:leading-8 text-gray-600">
           We help you present your achievements effectively and navigate the
           immigration process with confidence.
         </p>
         <div className="flex items-end justify-end w-full">
           <Image
-            className="-mr-32 -mt-12"
+            className="-mr-[5vw] lg:-mr-32 -mt-5 lg:-mt-12"
             src={aero}
             width={150}
             alt={"Aero"}

@@ -38,7 +38,7 @@ export default function FAQ() {
   return (
     <div id="faq" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
           <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-8">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -49,12 +49,12 @@ export default function FAQ() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-sm leading-8 text-gray-600">
+          <p className="mt-3 text-sm leading-6 lg:leading-8 text-gray-600">
             Find answers to common questions about EB1A immigration
           </p>
           <div className="flex items-end justify-end w-full">
             <Image
-              className="-mr-10 -mt-10"
+              className="-mr-[5vw] lg:-mr-32 -mt-5 lg:-mt-12"
               src={aero}
               width={150}
               alt={"Aero"}
