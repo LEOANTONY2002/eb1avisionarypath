@@ -17,7 +17,7 @@ export default function Hero() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   return (
-    <div className="relative isolate min-h-[150vh] text-black">
+    <div className="relative -mb-80 isolate min-h-[150vh] text-black">
       {/* Background image */}
       <div className="absolute w-screen h-[150vh] inset-0 -z-10">
         <Image
@@ -52,8 +52,12 @@ export default function Hero() {
           className={`mt-12 opacity-70 text-base sm:text-lg lg:text-3xl text-center ${montserrat.className}`}
         >
           Get an <strong>EB1A Green Card</strong> in FEW Days.
-          <strong>No Oscar Needed!</strong>
         </p>
+        <strong
+          className={`opacity-70 text-base sm:text-lg lg:text-3xl text-center ${montserrat.className}`}
+        >
+          No Oscar Needed!
+        </strong>
 
         {/* <p className="mt-4 sm:mt-6 opacity-70 text-sm lg:text-base text-center">
           We help you present your achievements effectively and navigate the
@@ -64,15 +68,13 @@ export default function Hero() {
         <div className="mt-20 sm:mt-10 flex sm:flex-row gap-4 items-center justify-center sm:justify-start">
           <div
             onClick={openModal}
-            className="w-max cursor-pointer px-6 flex gap-3 items-center sm:px-8 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
+            className="cursor-pointer px-32 flex gap-3 items-center sm:px-32 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
           >
             <span className="text-lg">Book a Free Consultation</span>
             <Image src={Chevron} alt={"Chevron Right"} />
           </div>
         </div>
       </div>
-
-      <Services />
 
       {/* Modal */}
       {isModalOpen && <Calendar closeModal={closeModal} />}

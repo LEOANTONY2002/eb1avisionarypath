@@ -93,10 +93,14 @@ export default function Header() {
   };
 
   const isActive = (href: string) => {
-    if (href === "/blog") return pathname === href;
-    const sectionId = href.split("#")[1];
-    return activeSection === sectionId;
+    if (pathname === "/blog") return pathname === href;
+    else {
+      const sectionId = href.split("#")[1];
+      return activeSection === sectionId;
+    }
   };
+
+  console.log(pathname);
 
   return (
     <header className="fixed inset-x-0 top-0 z-10 bg-[#ffffff9f] backdrop-blur-md">
@@ -148,7 +152,7 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <div className="w-max px-3 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-lg shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
+          <div className="w-max px-3 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
             <span className="">Contact Us</span>
             <Image src={Chevron} alt={"Chevron Right"} />
           </div>

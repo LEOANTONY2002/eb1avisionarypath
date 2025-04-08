@@ -11,12 +11,13 @@ export default function Pricing() {
       id: "tier-silver",
       href: "/contact",
       price: { amount: "6,999", additional: "3,000" },
-      description: "Basic Support",
+      description:
+        "Perfect for emerging leaders looking to establish their professional footprint.",
       features: [
-        "4 Scholarly Articles",
-        "4 Memberships/Fellowships",
-        "2 Media Features",
-        "2 Awards",
+        "Scholarly publications in renowned journals",
+        "Prestigious memberships and fellowships within reputable organizations",
+        "Featured appearances in select media platforms",
+        "Recognitions & accolades from respected institutions",
       ],
       featured: false,
     },
@@ -25,14 +26,15 @@ export default function Pricing() {
       id: "tier-gold",
       href: "/contact",
       price: { amount: "10,999", additional: "5,000" },
-      description: "Comprehensive Support",
+      description:
+        "Ideal for professionals aiming to elevate their industry stature and thought leadership.",
       features: [
-        "4 Scholarly Articles",
-        "6 Memberships/Fellowships",
-        "3 Media Features",
-        "4 Awards",
-        "Critical Role Documentation – 7 Support Letters",
-        "Judging – 30 Journal Papers",
+        "Scholarly contributions in internationally recognized journals",
+        "Esteemed memberships and fellowships across industry bodies",
+        "Media visibility through curated features",
+        "Multiple distinguished awards to enhance credibility",
+        "Comprehensive documentation of critical roles through influential industry endorsements",
+        "Judging participation for reputed academic publications",
       ],
       featured: true,
     },
@@ -41,20 +43,20 @@ export default function Pricing() {
       id: "tier-platinum",
       href: "/contact",
       price: { amount: "14,999", additional: "6,000" },
-      description: "Premium & Personalized",
+      description:
+        "Crafted for distinguished professionals seeking premium positioning and elite recognition globally.",
       features: [
-        "5 Scholarly Articles",
-        "6 Memberships/Fellowships",
-        "3 Media Features",
-        "4 Awards",
-        "5 Scholarly Articles",
-        "Critical Role Documentation – 7 Support Letters (Drafted)",
-        "Judging – 50 Journal Papers from Various Journals",
-        "Group Discount Available for 2+ Candidates",
-        "2 Virtual Speaking Opportunities",
-        "Original Contribution Letter (Drafted)",
-        "Final Merits Compilation",
-        "Attorney Introduction",
+        "Group benefits available for multiple candidates",
+        "Advanced scholarly publications showcasing thought leadership",
+        "Membership affiliations with highly regarded professional organizations",
+        "Prominent media exposure across influential channels",
+        "Honors and awards from industry-leading bodies",
+        "Virtual speaking engagements to enhance public visibility",
+        "Extensive documentation highlighting critical roles and global impact through expert endorsements",
+        "Judging expertise across prestigious academic platforms",
+        "Thoughtfully crafted documentation showcasing original contributions to your field",
+        "Comprehensive final merits portfolio for optimal presentation",
+        "Introduction to a trusted attorney for further professional guidance",
       ],
       featured: false,
     },
@@ -99,10 +101,10 @@ export default function Pricing() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative rounded-2xl p-8 m-4 ${
+              className={`relative rounded-2xl p-8 m-4 transition-all duration-200 ${
                 tier.featured
-                  ? "bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] shadow-xl scale-105 ring-2 ring-white"
-                  : "bg-white text-gray-900 ring-1 ring-gray-200"
+                  ? "bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] shadow-xl scale-105 ring-2 ring-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09]"
+                  : "bg-white text-gray-900 ring-1 ring-gray-200 hover:shadow-lg hover:scale-[1.02]"
               }`}
             >
               {tier.featured && (
@@ -185,13 +187,13 @@ export default function Pricing() {
                 {tier.featured ? (
                   <a
                     href={tier.href}
-                    className={`mt-8 block rounded-xl px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
+                    className={`mt-8 block rounded-full px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
                   >
                     Get started
                   </a>
                 ) : (
-                  <div className="mt-6 cursor-pointer flex max-w-sm rounded-xl bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85] p-0.5 shadow-lg">
-                    <div className="flex flex-1 items-center justify-center font-bold text-xl bg-white px-6 py-3 rounded-xl">
+                  <div className="mt-6 cursor-pointer flex max-w-sm rounded-full bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85] p-0.5 shadow-lg">
+                    <div className="flex flex-1 items-center justify-center font-bold text-xl bg-white px-6 py-3 rounded-full">
                       <div className="bg-clip-text w-max bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85]">
                         <p className="text-transparent">Get started</p>
                       </div>

@@ -1,27 +1,38 @@
 "use client";
 
 import Link from "next/link";
+import footer_bg from "@/public/images/footer.png";
+import Image from "next/image";
 
 const navigation = {
   main: [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/#services" },
     { name: "About", href: "/about" },
+    { name: "FAQ", href: "/#faq" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-  ],
-  services: [
-    { name: "EB1A Visa", href: "/services/eb1a" },
-    { name: "O1A Visa", href: "/services/o1a" },
-    { name: "EB2 NIW", href: "/services/eb2-niw" },
   ],
   social: [
     {
       name: "LinkedIn",
+      href: "https://www.linkedin.com/company/eb1a-visionary-path",
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 30 30" {...props}>
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-.88-.06-1.273-1.16-1.273-1.17 0-1.33.91-1.33 1.235v5.642h-3v-11h3v1.493c.43-.623 1.122-1.243 2.313-1.243 2.401 0 2.6 1.699 2.6 3.888v6.862z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Instagram",
       href: "#",
       icon: (props: any) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-.88-.06-1.273-1.16-1.273-1.17 0-1.33.91-1.33 1.235v5.642h-3v-11h3v1.493c.43-.623 1.122-1.243 2.313-1.243 2.401 0 2.6 1.699 2.6 3.888v6.862z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#ffffff"
+          viewBox="0 0 30 30"
+          {...props}
+        >
+          <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
         </svg>
       ),
     },
@@ -52,17 +63,23 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-50">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <footer className="relative flex justify-end max-h-[70vh] pt-32 overflow-visible pb-64">
+      <Image
+        src={footer_bg}
+        alt=""
+        className="absolute w-screen bottom-0 -z-10 h-[70vh]"
+        objectFit="cover"
+      />
+      <div className="mx-auto max-w-7xl text-white overflow-visible px-6 py-20 sm:py-24 lg:px-8">
         <nav
-          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+          className="flex justify-center flex-wrap gap-5 space-x-12"
           aria-label="Footer"
         >
           {navigation.main.map((item) => (
             <div key={item.name}>
               <Link
                 href={item.href}
-                className="text-sm leading-6 text-gray-600 hover:text-blue-600"
+                className="text-sm leading-6 opacity-55 hover:opacity-100 white"
               >
                 {item.name}
               </Link>
@@ -74,18 +91,18 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="text-gray-400 hover:text-blue-600"
+              className="opacity-55 hover:opacity-100 white"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+        <p className="mt-10 text-center text-xs leading-5">
           &copy; {new Date().getFullYear()} EB1A Visionary Path. All rights
           reserved.
         </p>
-        <div className="mt-10 text-center text-xs leading-5 text-gray-500">
+        <div className="mt-10 text-center text-xs leading-5">
           <p>
             EB1A Visionary Path is not a law firm and does not provide legal
             advice. Our services are limited to profile building and evidence

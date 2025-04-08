@@ -49,8 +49,8 @@ export default function Testimonials() {
       setIsTestimonialShown(true);
       interval = setInterval(() => {
         goToNext();
-      }, 3000);
-    }, 300);
+      }, 10000);
+    }, 100);
 
     return () => clearInterval(interval); // Clean up interval on unmount
   }, [currentIndex]);
@@ -182,7 +182,7 @@ export default function Testimonials() {
                 isTestimonialShown ? "opacity-100" : "opacity-0"
               }`}
             >
-              <div className="w-full flex flex-col gap-3 lg:gap-5 items-center bg-gradient-to-br from-[#003e740f] to-[#ef00280e] backdrop-blur-sm rounded-[40px] lg:rounded-[50px] rounded-es p-6 lg:p-8 border border-white shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
+              <div className="w-full flex flex-col gap-3 lg:gap-5 items-center bg-gradient-to-br from-[#003e740f] to-[#ef00280e] backdrop-blur-sm rounded-[40px] lg:rounded-[50px] lg:rounded-es p-6 lg:p-8 border border-white shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
                 <h2 className="font-extrabold text-xl lg:text-3xl text-center text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
                   {testimonial.title}
                 </h2>
@@ -198,7 +198,7 @@ export default function Testimonials() {
                 </div> */}
               </div>
               <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="lg:bg-gradient-to-br from-[#003e7415] to-[#ef002816] lg:backdrop-blur-sm rounded-[30px] lg:rounded-[40px] rounded-ss mt-2 lg:p-8 lg:border border-white lg:shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
+                <div className="lg:bg-gradient-to-br from-[#003e7415] to-[#ef002816] lg:backdrop-blur-sm rounded-[30px] lg:rounded-[40px] lg:rounded-ss mt-2 lg:p-8 lg:border border-white lg:shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
                   <h3 className="font-extrabold text-lg lg:text-2xl text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
                     {testimonial.name}
                   </h3>

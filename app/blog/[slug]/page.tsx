@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CalendarIcon, UserIcon, TagIcon } from "@heroicons/react/24/outline";
 import { use } from "react";
 import Header from "@/app/components/Header";
+import Loading from "@/app/loading";
 
 interface BlogPost {
   _id: string;
@@ -25,6 +26,7 @@ export default function BlogPost({
 }) {
   const { slug } = use(params); // Unwrap the params Promise
 
+  const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -38,62 +40,81 @@ export default function BlogPost({
         const data = await response.json();
         setBlog(data);
       } catch (err) {
-        // setError(err instanceof Error ? err.message : "An error occurred");
+        setError(err instanceof Error ? err.message : "An error occurred");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchBlogPost();
   }, [slug]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-red-500 text-lg font-semibold mb-4">
+          Error: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   if (blog) {
     return (
-      <>
-        <Header />
-        <article className="min-h-screen bg-gray-50 py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-96">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center text-sm text-gray-500 mb-6">
-                  <div className="flex items-center">
-                    <CalendarIcon className="h-4 w-4 mr-1" />
-                    {new Date(blog.createdAt).toLocaleDateString()}
-                  </div>
-                  <div className="flex items-center ml-4">
-                    <UserIcon className="h-4 w-4 mr-1" />
-                    {blog.author}
-                  </div>
+      <article className="min-h-screen bg-gray-50 py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div className="relative m-8 rounded-3xl border border-white/45 h-96">
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                fill
+                className="object-cover rounded-3xl"
+              />
+            </div>
+            <div className="p-8">
+              <div className="flex items-center text-sm text-gray-500 mb-6">
+                <div className="flex items-center">
+                  <CalendarIcon className="h-4 w-4 mr-1" />
+                  {new Date(blog.createdAt).toLocaleDateString()}
                 </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-6">
-                  {blog.title}
-                </h1>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {blog.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-                    >
-                      <TagIcon className="h-3 w-3 mr-1" />
-                      {tag}
-                    </span>
-                  ))}
+                <div className="flex items-center ml-4">
+                  <UserIcon className="h-4 w-4 mr-1" />
+                  {blog.author}
                 </div>
-                <div
-                  className="prose prose-lg max-w-none"
-                  dangerouslySetInnerHTML={{ __html: blog.content }}
-                />
               </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-6">
+                {blog.title}
+              </h1>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {blog.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                  >
+                    <TagIcon className="h-3 w-3 mr-1" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div
+                className="prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              />
             </div>
           </div>
-        </article>
-      </>
+        </div>
+      </article>
     );
   }
 }
