@@ -12,8 +12,8 @@ export default async function seedDatabase() {
     console.log("Connected to MongoDB");
 
     // Clear existing data
-    // await Blog.deleteMany({});
-    // await Testimonial.deleteMany({});
+    await Blog.deleteMany({});
+    await Testimonial.deleteMany({});
 
     // Sample blog posts
     const blogPosts = [
@@ -116,36 +116,36 @@ export default async function seedDatabase() {
     // Sample testimonials
     const testimonials = [
       {
-        name: "Dr. Rajesh Patel",
-        position: "Senior Research Scientist",
-        company: "Tech Innovations Inc.",
+        name: "Siva S",
+        position: "Senior Software Designer",
+        company: "Adobe",
         title: "Attention to Detail",
         testimonial:
           "EB1A Visionary Path helped me navigate the complex EB1A visa process. Their expertise and attention to detail made all the difference in my successful application.",
         visaType: "EB1A",
       },
       {
-        name: "Maria Garcia",
-        position: "Professional Athlete",
-        company: "Sports Excellence",
+        name: "Nallasamy",
+        position: "Software Engineer",
+        company: "Meta",
         title: "Dedication to Client Success",
         testimonial:
           "The team at EB1A Visionary Path provided exceptional guidance throughout my O1A visa application. Their knowledge of immigration law and dedication to client success is outstanding.",
         visaType: "O1A",
       },
       {
-        name: "Dr. James Wilson",
-        position: "Medical Researcher",
-        company: "Healthcare Innovations",
+        name: "Sai M",
+        position: "Technical Writer",
+        company: "Amazon",
         title: "Expertise in Immigration",
         testimonial:
           "Thanks to EB1A Visionary Path, I successfully obtained my EB2 NIW visa. Their expertise in immigration law and commitment to client success is truly remarkable.",
         visaType: "EB2 NIW",
       },
       {
-        name: "Dr. Li Wei",
+        name: "Nandakumar",
         position: "AI Research Lead",
-        company: "Future Tech Solutions",
+        company: "Xoriant",
         title: "Profound Strategic Approach",
         testimonial:
           "The EB1A Visionary Path team's deep understanding of the EB1A requirements and their strategic approach to presenting my case was invaluable. I'm grateful for their support.",
@@ -158,10 +158,10 @@ export default async function seedDatabase() {
     await Testimonial.insertMany(testimonials);
 
     console.log("Sample data inserted successfully");
-    process.exit(0);
+    // process.exit(0);
   } catch (error) {
     console.error("Error seeding database:", error);
-    process.exit(1);
+    // process.exit(1);
   }
 }
 

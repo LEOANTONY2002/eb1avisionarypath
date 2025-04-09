@@ -25,17 +25,13 @@ const Disclaimer: React.FC = () => {
 
   return (
     <div className="fixed inset-0 bg-white bg-opacity-20 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="text-center text-black p-12 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 border border-white bg-gradient-to-br from-[#dff0ff] to-[#ffced6]">
+      <div className="text-center text-black p-12 rounded-2xl shadow-2xl max-w-5xl w-full mx-4 border border-white bg-gradient-to-br from-[#dff0ff] to-[#ffced6]">
         <h2 className="text-2xl font-bold mb-4">Disclaimer</h2>
         <p className="mb-4">
-          The content provided on this platform is intended for general
-          informational purposes only and does not constitute legal advice. We
-          strongly encourage consulting with a qualified immigration attorney
-          for any legal concerns or questions related to your case. While we
-          make every effort to present accurate and up-to-date information,
-          there may be instances where updates or changes are not fully
-          reflected. Any reliance on the information provided is done at your
-          own discretion.
+          At EB1A Visionary Path, we aim to share helpful insights for your
+          journey, but please note that we are not a law firm. Our content is
+          informational only and should not be considered legal advice or a
+          substitute for professional legal guidance.
         </p>
         <button
           onClick={handleClose}

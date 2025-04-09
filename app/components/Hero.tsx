@@ -2,12 +2,30 @@ import Image from "next/image";
 import HeroImage from "@/public/images/hero-bg.svg";
 import Chevron from "@/public/images/chevron.svg";
 import { Playfair_Display, Montserrat } from "next/font/google";
+import { useEffect, useState } from "react";
 // import { sendGTMEvent } from "@next/third-parties/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+const words = ["Starts Here.", "No Awards?", "No Problem."];
+
 export default function Hero({ openModal }: { openModal: () => void }) {
+  const [index, setIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimating(true);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % words.length);
+        setAnimating(false);
+      }, 250); // duration of slide-out
+    }, 1200);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative -mb-[450px] isolate min-h-[150vh] text-black">
       {/* Background image */}
@@ -34,26 +52,29 @@ export default function Hero({ openModal }: { openModal: () => void }) {
         </div>
 
         {/* Content */}
+
         <h1
           className={`mt-6 text-center sm:mt-10 text-3xl sm:text-4xl lg:text-6xl tracking-tight ${playfair.className}`}
         >
           Your Path to Extraordinary Ability Immigration
         </h1>
         <p
-          className={`mt-12 opacity-70 text-base sm:text-lg lg:text-3xl text-center ${montserrat.className}`}
+          className={`mt-12 -ml-28 lg:-ml-48 font-bold text-base sm:text-lg lg:text-3xl text-center ${montserrat.className}`}
         >
-          Get an <strong>EB1A Green Card</strong> in FEW Days.
+          Your EB1A Green Card Journey
+          <span className="relative  w-max h-2 overflow-hidden ">
+            <span
+              className={`absolute top-0 w-max ml-2 text-transparent bg-gradient-to-r font-bold from-[#3c80bb] to-[#b70000] bg-clip-text ${
+                animating ? "animate-slide-out" : "animate-slide-in"
+              }`}
+            >
+              {words[index]}
+            </span>
+          </span>
         </p>
-        <strong
-          className={`opacity-70 text-base sm:text-lg lg:text-3xl text-center ${montserrat.className}`}
-        >
-          No Oscar Needed!
-        </strong>
-
-        {/* <p className="mt-4 sm:mt-6 opacity-70 text-sm lg:text-base text-center">
-          We help you present your achievements effectively and navigate the
-          immigration process with confidence.
-        </p> */}
+        <p className="mt-5 opacity-70 text-base sm:text-lg lg:text-3xl text-center">
+          Let’s Build Your Case.
+        </p>
 
         {/* Buttons */}
         <div className="mt-20 sm:mt-10 flex sm:flex-row gap-4 items-center justify-center sm:justify-start">

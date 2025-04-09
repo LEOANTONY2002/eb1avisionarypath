@@ -135,7 +135,7 @@ export default function Testimonials() {
                 />
 
                 {/* Navigation buttons */}
-                <div className="hidden lg:flex absolute right-4 lg:right-32 bottom-10 items-center gap-5">
+                <div className="hidden z-[1] lg:flex absolute right-4 lg:right-32 bottom-10 items-center gap-5">
                   <button
                     onClick={() => goToPrevious()}
                     className="shadow-2xl shadow-black/50 bg-white rounded-full p-4 hover:bg-gradient-to-br hover:from-[#4fadff0f] hover:to-[#ff284c0e] focus:outline-none transition-colors duration-200"
@@ -212,7 +212,7 @@ export default function Testimonials() {
                 </div>
               </div>
               {/* Navigation buttons */}
-              <div className="flex lg:hidden items-center justify-center gap-5">
+              <div className="flex z-[1] lg:hidden items-center justify-center gap-5">
                 <button
                   onClick={() => goToPrevious()}
                   className="shadow-2xl shadow-black/50 bg-white rounded-full p-4 hover:bg-gradient-to-br hover:from-[#4fadff0f] hover:to-[#ff284c0e] focus:outline-none transition-colors duration-200"

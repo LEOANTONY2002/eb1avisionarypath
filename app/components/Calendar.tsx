@@ -1,9 +1,7 @@
 "use client";
 
 import { PopupModal } from "react-calendly";
-import Loader from "@/public/images/loader.svg";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const pageSettings = {
   backgroundColor: "FFF4F4",
@@ -31,11 +29,6 @@ const Calendar = ({ closeModal }: { closeModal: () => void }) => {
           }}
           open={true}
           pageSettings={pageSettings}
-          LoadingSpinner={() => (
-            <div className="h-full flex items-center justify-center">
-              <Image src={Loader} alt="Loading" />
-            </div>
-          )}
         />
       )}
     </div>
