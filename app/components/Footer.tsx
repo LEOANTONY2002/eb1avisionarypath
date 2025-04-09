@@ -7,8 +7,11 @@ import Image from "next/image";
 const navigation = {
   main: [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/#services" },
+    { name: "Why Us", href: "/#whyus" },
+    { name: "Pricing", href: "/#pricing" },
+    { name: "Testimonial", href: "/#testimonials" },
     { name: "FAQ", href: "/#faq" },
     { name: "Blog", href: "/blog" },
   ],
@@ -63,7 +66,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="relative flex justify-end max-h-[70vh] pt-32 overflow-visible pb-64">
+    <footer className="relative flex justify-end max-h-[70vh] pt-28 overflow-visible pb-64">
       <Image
         src={footer_bg}
         alt=""
@@ -79,7 +82,7 @@ export default function Footer() {
             <div key={item.name}>
               <Link
                 href={item.href}
-                className="text-sm leading-6 opacity-55 hover:opacity-100 white"
+                className="text-sm leading-6 opacity-55 hover:opacity-100 hover:font-semibold"
               >
                 {item.name}
               </Link>
@@ -91,12 +94,42 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="opacity-55 hover:opacity-100 white"
+              className="opacity-55 hover:opacity-100"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
+        </div>
+        <div className="mt-10 flex justify-center space-x-10 text-sm leading-6">
+          <a
+            href="tel:+918248633492"
+            className="flex items-center opacity-55 hover:opacity-100"
+          >
+            <svg
+              className="h-6 w-6 mr-2"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.64.58 1 1 0 011 1v3.5a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.58 3.64 1 1 0 01-.27 1.11l-2.2 2.2z" />
+            </svg>
+            +91 8248633492
+          </a>
+          <a
+            href="mailto:info@eb1avisionarypath.com"
+            className="flex items-center opacity-55 hover:opacity-100"
+          >
+            <svg
+              className="h-6 w-6 mr-2"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 11 4 6.01V6h16zM4 18V8.99l8 5 8-5V18H4z" />
+            </svg>
+            info@eb1avisionarypath.com
+          </a>
         </div>
         <p className="mt-10 text-center text-xs leading-5">
           &copy; {new Date().getFullYear()} EB1A Visionary Path. All rights

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import HeroImage from "@/public/images/hero-bg.svg";
 import Chevron from "@/public/images/chevron.svg";
-import Services from "./Services";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import { useState } from "react";
 import Calendar from "./Calendar"; // Make sure to create this component
@@ -14,10 +13,10 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className="relative -mb-80 isolate min-h-[150vh] text-black">
+    <div className="relative -mb-[450px] isolate min-h-[150vh] text-black">
       {/* Background image */}
       <div className="absolute w-screen h-[150vh] inset-0 -z-10">
         <Image
@@ -67,10 +66,10 @@ export default function Hero() {
         {/* Buttons */}
         <div className="mt-20 sm:mt-10 flex sm:flex-row gap-4 items-center justify-center sm:justify-start">
           <div
-            onClick={openModal}
-            className="cursor-pointer px-32 flex gap-3 items-center sm:px-32 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
+            onClick={() => setIsModalOpen(true)}
+            className="cursor-pointer lg:px-32 px-10 flex gap-3 items-center sm:px-32 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
           >
-            <span className="text-lg">Book a Free Consultation</span>
+            <span className="lg:text-lg">Book a Free Consultation</span>
             <Image src={Chevron} alt={"Chevron Right"} />
           </div>
         </div>

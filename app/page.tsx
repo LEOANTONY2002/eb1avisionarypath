@@ -18,7 +18,7 @@ const Disclaimer = dynamic(() => import("./components/Disclaimer"), {
 
 export default function Home() {
   return (
-    <main className="bg-white overflow-x-hidden">
+    <main id="root" className="bg-white overflow-x-hidden">
       <Disclaimer />
       <Hero />
       <Services />

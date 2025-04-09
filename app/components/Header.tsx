@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation"; // Use usePathname for Next.js 13
 import Link from "next/link";
 import Image from "next/image";
@@ -9,9 +9,10 @@ import Chevron from "@/public/images/chevron.svg";
 
 const links = [
   { href: "/#home", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/#services", label: "Services" },
   { href: "/#whyus", label: "Why Us" },
-  // { href: "/#about", label: "About" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/#testimonials", label: "Testimonials" },
   { href: "/#faq", label: "FAQ" },
   { href: "/blog", label: "Blog" },
@@ -21,6 +22,25 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home"); // Set initial active section to "home"
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     if (sessionStorage.getItem("hash")) {
@@ -93,7 +113,8 @@ export default function Header() {
   };
 
   const isActive = (href: string) => {
-    if (pathname === "/blog") return pathname === href;
+    if (pathname.startsWith("/blog")) return pathname === href;
+    if (pathname === "/about") return pathname === href;
     else {
       const sectionId = href.split("#")[1];
       return activeSection === sectionId;
@@ -160,6 +181,7 @@ export default function Header() {
       </nav>
       {/* Mobile menu */}
       <div
+        ref={menuRef}
         className={`lg:hidden ${
           isMenuOpen ? "block" : "hidden"
         } transition-all duration-300 ease-in-out`}
@@ -181,13 +203,15 @@ export default function Header() {
               {link.label}
             </span>
           ))}
-          <Link
-            href="/contact"
-            className="block rounded-md bg-blue-600 px-3 py-2 text-base font-medium text-white hover:bg-blue-500 transition-colors duration-300 ease-in-out"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
+          <div className="py-5">
+            <Link
+              href="/#"
+              className="block m-2 px-6 py-3 bg-gradient-to-r text-white from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </header>

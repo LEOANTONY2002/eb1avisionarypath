@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { CalendarIcon, UserIcon, TagIcon } from "@heroicons/react/24/outline";
 import { use } from "react";
-import Header from "@/app/components/Header";
 import Loading from "@/app/loading";
 
 interface BlogPost {
@@ -71,9 +70,9 @@ export default function BlogPost({
 
   if (blog) {
     return (
-      <article className="min-h-screen bg-gray-50 py-32">
+      <article className="min-h-screen py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
+          <div className=" rounded-[50px] shadow-lg overflow-hidden">
             <div className="relative m-8 rounded-3xl border border-white/45 h-96">
               <Image
                 src={blog.image}
@@ -100,7 +99,7 @@ export default function BlogPost({
                 {blog.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
                   >
                     <TagIcon className="h-3 w-3 mr-1" />
                     {tag}
