@@ -208,7 +208,7 @@ export default function Header() {
             <div className="py-5">
               <Link
                 href="/#"
-                className="block m-2 px-6 py-3 bg-gradient-to-r text-white from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
+                className="block m-2 px-6 py-3 bg-gradient-to-r text-center text-white from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsModalOpen(true);

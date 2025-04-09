@@ -4,7 +4,7 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import aero from "@/public/images/aero.webp";
 import Image from "next/image";
 
-export default function Pricing() {
+export default function Pricing({ openModal }: { openModal: () => void }) {
   const tiers = [
     {
       name: "Silver Plan",
@@ -185,17 +185,22 @@ export default function Pricing() {
                 </div> */}
 
                 {tier.featured ? (
-                  <a
-                    href={tier.href}
-                    className={`mt-8 block rounded-full px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
+                  <button
+                    onClick={() => openModal()}
+                    className={`mt-8 block w-full rounded-full px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
                   >
                     Get started
-                  </a>
+                  </button>
                 ) : (
                   <div className="mt-6 cursor-pointer flex max-w-sm rounded-full bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85] p-0.5 shadow-lg">
                     <div className="flex flex-1 items-center justify-center font-bold text-xl bg-white px-6 py-3 rounded-full">
                       <div className="bg-clip-text w-max bg-gradient-to-tr from-[#34A1FF] to-[#FF6C85]">
-                        <p className="text-transparent">Get started</p>
+                        <button
+                          onClick={() => openModal()}
+                          className="text-transparent"
+                        >
+                          Get started
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -27,10 +27,15 @@ export default function Home() {
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    const existingScript = document.querySelector(
+      "script[src='https://assets.calendly.com/assets/external/widget.js']"
+    );
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.head.appendChild(script);
+    }
   }, []);
 
   return (
@@ -40,7 +45,7 @@ export default function Home() {
       <Hero openModal={openModal} />
       <Services />
       <ChooseUs />
-      <Pricing />
+      <Pricing openModal={openModal} />
       <Testimonials />
       <FAQ />
     </main>
