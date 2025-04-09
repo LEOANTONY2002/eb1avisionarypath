@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useState } from "react";
 // import Mission from "./components/Mission";
 
 // Dynamically import client components with ssr disabled
@@ -15,12 +16,21 @@ const FAQ = dynamic(() => import("./components/FAQ"), { ssr: true });
 const Disclaimer = dynamic(() => import("./components/Disclaimer"), {
   ssr: true,
 });
+const Calendar = dynamic(() => import("./components/Calendar"), {
+  ssr: false,
+});
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <main id="root" className="bg-white overflow-x-hidden">
+      {isModalOpen && <Calendar closeModal={closeModal} />}
       <Disclaimer />
-      <Hero />
+      <Hero openModal={openModal} />
       <Services />
       <ChooseUs />
       <Pricing />

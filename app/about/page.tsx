@@ -2,10 +2,10 @@ import Image from "next/image";
 // import Loading from "@/app/loading";
 import HeroImage from "@/public/images/about-bg.svg";
 import { Montserrat, Playfair_Display, Lavishly_Yours } from "next/font/google";
-import aero from "@/public/images/aero.png";
-import choose1 from "@/public/images/choose1.png";
-import choose2 from "@/public/images/choose2.png";
-import choose3 from "@/public/images/choose3.png";
+import aero from "@/public/images/aero.webp";
+import choose1 from "@/public/images/choose1.webp";
+import choose2 from "@/public/images/choose2.webp";
+import choose3 from "@/public/images/choose3.webp";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const lavishly = Lavishly_Yours({ subsets: ["latin"], weight: "400" });
@@ -36,9 +36,9 @@ const content = [
 
 export default function About() {
   return (
-    <div className="bg-white w-screen overflow-x-hidden relative">
+    <main className="bg-white w-screen overflow-x-hidden relative">
       {/* Header Section */}
-      <div className="isolate max-w-7xl text-white h-[70vh] mx-auto px-4 flex flex-col items-center justify-center gap-5 sm:px-6 lg:px-8 text-center">
+      <section className="isolate max-w-7xl text-white h-[70vh] mx-auto px-4 flex flex-col items-center justify-center gap-5 sm:px-6 lg:px-8 text-center">
         <div className="absolute w-screen h-[110vh] inset-0 -z-10">
           <Image
             src={HeroImage}
@@ -61,7 +61,7 @@ export default function About() {
           About Us
         </h1>
         <p
-          className={`my-4 text-sm sm:text-lg border border-white p-5 rounded-3xl m-2 ${montserrat.className}`}
+          className={`my-4 text-sm sm:text-lg border bg-white/15 backdrop-blur-md border-white p-5 rounded-3xl m-2 ${montserrat.className}`}
         >
           At EB1A Visionary Path, we are dedicated to guiding EB1A aspirants
           with end-to-end support and valuable insights. Our goal is to simplify
@@ -72,10 +72,10 @@ export default function About() {
           with EB1A Visionary Path your reliable partner in navigating the road
           to U.S. immigration excellence.
         </p>
-      </div>
+      </section>
 
       {/* Mission & Vision Section */}
-      <div className="mt-80 max-w-7xl mx-auto text-black">
+      <section className="mt-80 max-w-7xl mx-auto text-black">
         <div className="flex flex-col-reverse items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-12 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912]">
           <p className="text-sm md:text-lg">
             “To become the most trusted partner for high-achieving professionals
@@ -96,9 +96,9 @@ export default function About() {
             </h2>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-12 max-w-7xl mx-auto text-black">
+      <section className="mt-12 max-w-7xl mx-auto text-black">
         <div className="flex flex-col items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-48 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912]">
           <div className="flex flex-col gap-6">
             <p
@@ -120,51 +120,53 @@ export default function About() {
             categories with clarity, confidence, and credibility.”
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Core Values Section */}
-      <div className="mx-auto max-w-[70vw] lg:max-w-2xl text-center">
-        <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
-          <span className="relative flex h-2 w-2 mr-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
-          </span>
-          Expert Immigration Services
-        </div>
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Our Core Values
-        </h2>
-        <p className="mt-3 text-sm leading-6 lg:leading-8 text-gray-600">
-          We help you present your achievements effectively and navigate the
-          immigration process with confidence.
-        </p>
-        <div className="flex items-end justify-end w-full">
-          <Image
-            className="-mr-[5vw] lg:-mr-32 -mt-5 lg:-mt-12"
-            src={aero}
-            width={150}
-            alt={"Aero"}
-          />
-        </div>
-      </div>
-      <div className="max-w-5xl mx-auto mt-32 my-80 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-        {content.map((item, index) => (
-          <div
-            key={index}
-            className="relative pt-12 flex flex-col items-center rounded-3xl p-8 bg-white/10 backdrop-filter backdrop-blur-sm shadow-2xl shadow-black/10 transition-all duration-500 hover:-translate-y-1 border border-white/20"
-          >
-            <div className="absolute -top-8 rounded-xl w-max p-3 bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]">
-              <Image src={item.img} width={40} alt={item.title} />
-            </div>
-            <h3 className="mt-4 text-center font-bold text-lg text-gray-900">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-sm text-center leading-5 text-gray-600">
-              {item.description}
-            </p>
+      <section>
+        <div className="mx-auto max-w-[70vw] lg:max-w-2xl text-center">
+          <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
+            </span>
+            Expert Immigration Services
           </div>
-        ))}
-      </div>
-    </div>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Our Core Values
+          </h2>
+          <p className="mt-3 text-sm leading-6 lg:leading-8 text-gray-600">
+            We help you present your achievements effectively and navigate the
+            immigration process with confidence.
+          </p>
+          <div className="flex items-end justify-end w-full">
+            <Image
+              className="-mr-[5vw] lg:-mr-32 -mt-5 lg:-mt-12"
+              src={aero}
+              width={150}
+              alt={"Aero"}
+            />
+          </div>
+        </div>
+        <div className="max-w-5xl mx-auto mt-32 my-80 grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+          {content.map((item, index) => (
+            <div
+              key={index}
+              className="relative pt-12 flex flex-col items-center rounded-3xl p-8 bg-white/10 backdrop-filter backdrop-blur-sm shadow-2xl shadow-black/10 transition-all duration-500 hover:-translate-y-1 border border-white/20"
+            >
+              <div className="absolute -top-8 rounded-xl w-max p-3 bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]">
+                <Image src={item.img} width={40} alt={item.title} />
+              </div>
+              <h3 className="mt-4 text-center font-bold text-lg text-gray-900">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm text-center leading-5 text-gray-600">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

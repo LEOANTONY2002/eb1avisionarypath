@@ -21,7 +21,7 @@ const Calendar = ({ closeModal }: { closeModal: () => void }) => {
   }, []);
 
   return (
-    <div className="absolute z-30 w-screen h-screen bg-[#fdfefffb] backdrop-blur-lg flex items-center justify-center overflow-y-auto">
+    <div className="absolute z-30 w-screen h-screen bg-[#fdfeff24] backdrop-blur-lg flex items-center justify-center overflow-y-auto">
       {document.getElementById("root") && (
         <PopupModal
           url={"https://calendly.com/eb1avisionarypath/30min"}

@@ -1,4 +1,4 @@
-import BG from "@/public/images/vision-bg.png";
+import BG from "@/public/images/vision-bg.webp";
 import Image from "next/image";
 
 const Mission = () => {

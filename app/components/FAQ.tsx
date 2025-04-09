@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import aero from "@/public/images/aero.png";
+import aero from "@/public/images/aero.webp";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -36,7 +36,7 @@ export default function FAQ() {
   ];
 
   return (
-    <div id="faq" className="bg-white py-24">
+    <section id="faq" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
           <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-8">
@@ -133,6 +133,6 @@ export default function FAQ() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

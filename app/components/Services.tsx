@@ -1,5 +1,5 @@
-import SOL from "@/public/images/SOL.png";
-import aero from "@/public/images/aero.png";
+import SOL from "@/public/images/SOL.webp";
+import aero from "@/public/images/aero.webp";
 import Image from "next/image";
 
 const serviceContent = [
@@ -22,7 +22,7 @@ const serviceContent = [
 
 export default function Services() {
   return (
-    <div id="services" className="relative py-24 overflow-hidden ">
+    <section id="services" className="relative py-24 overflow-hidden ">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-purple-500/5 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
@@ -84,6 +84,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

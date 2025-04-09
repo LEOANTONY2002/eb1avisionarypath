@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import footer_bg from "@/public/images/footer.png";
+import footer_bg from "@/public/images/footer.webp";
 import Image from "next/image";
 
 const navigation = {

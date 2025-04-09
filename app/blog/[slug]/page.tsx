@@ -54,7 +54,7 @@ export default function BlogPost({
 
   if (error) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center h-screen my-auto py-12">
         <p className="text-red-500 text-lg font-semibold mb-4">
           Error: {error}
         </p>

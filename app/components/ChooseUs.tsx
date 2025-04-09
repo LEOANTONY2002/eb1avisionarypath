@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import aero from "@/public/images/aero.png";
-import choose1 from "@/public/images/choose1.png";
-import choose2 from "@/public/images/choose2.png";
-import choose3 from "@/public/images/choose3.png";
+import aero from "@/public/images/aero.webp";
+import choose1 from "@/public/images/choose1.webp";
+import choose2 from "@/public/images/choose2.webp";
+import choose3 from "@/public/images/choose3.webp";
 
 const content = [
   {
@@ -26,7 +26,7 @@ const content = [
 
 const ChooseUs = () => {
   return (
-    <div id="whyus" className="mx-auto py-32 max-w-7xl px-6 lg:px-8">
+    <section id="whyus" className="mx-auto py-32 max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
         <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
           <span className="relative flex h-2 w-2 mr-2">
@@ -70,7 +70,7 @@ const ChooseUs = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

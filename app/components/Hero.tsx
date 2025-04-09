@@ -1,20 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import HeroImage from "@/public/images/hero-bg.svg";
 import Chevron from "@/public/images/chevron.svg";
 import { Playfair_Display, Montserrat } from "next/font/google";
-import { useState } from "react";
-import Calendar from "./Calendar"; // Make sure to create this component
+// import { sendGTMEvent } from "@next/third-parties/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const closeModal = () => setIsModalOpen(false);
-
+export default function Hero({ openModal }: { openModal: () => void }) {
   return (
     <div className="relative -mb-[450px] isolate min-h-[150vh] text-black">
       {/* Background image */}
@@ -27,9 +20,8 @@ export default function Hero() {
           priority
         />
       </div>
-
       {/* Main content */}
-      <div
+      <section
         id="home"
         className="relative max-w-screen-md min-h-screen flex flex-col items-center justify-center py-20 mx-auto "
       >
@@ -66,17 +58,14 @@ export default function Hero() {
         {/* Buttons */}
         <div className="mt-20 sm:mt-10 flex sm:flex-row gap-4 items-center justify-center sm:justify-start">
           <div
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => openModal()}
             className="cursor-pointer lg:px-32 px-10 flex gap-3 items-center sm:px-32 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
           >
             <span className="lg:text-lg">Book a Free Consultation</span>
             <Image src={Chevron} alt={"Chevron Right"} />
           </div>
         </div>
-      </div>
-
-      {/* Modal */}
-      {isModalOpen && <Calendar closeModal={closeModal} />}
+      </section>
     </div>
   );
 }

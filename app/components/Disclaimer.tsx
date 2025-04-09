@@ -7,13 +7,10 @@ const Disclaimer: React.FC = () => {
     const isShown = sessionStorage.getItem("disclaimerIsShown");
 
     if (!isShown) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-        document.body.style.overflow = "hidden";
-      }, 2000);
+      setIsVisible(true);
+      document.body.style.overflow = "hidden";
 
       return () => {
-        clearTimeout(timer);
         document.body.style.overflow = "unset";
       };
     }

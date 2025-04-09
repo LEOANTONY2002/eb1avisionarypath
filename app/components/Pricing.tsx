@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckIcon } from "@heroicons/react/24/outline";
-import aero from "@/public/images/aero.png";
+import aero from "@/public/images/aero.webp";
 import Image from "next/image";
 
 export default function Pricing() {
@@ -63,7 +63,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div
+    <section
       id="pricing"
       className="relative bg-gradient-to-br from-white via-blue-50/30 to-white py-24"
     >
@@ -224,6 +224,6 @@ export default function Pricing() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
