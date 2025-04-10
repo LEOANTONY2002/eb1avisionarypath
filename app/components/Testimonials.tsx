@@ -134,47 +134,12 @@ export default function Testimonials() {
                   alt="Testimonial"
                 />
 
-                {/* Navigation buttons */}
-                <div className="hidden z-[1] lg:flex absolute right-4 lg:right-32 bottom-10 items-center gap-5">
-                  <button
-                    onClick={() => goToPrevious()}
-                    className="shadow-2xl shadow-black/50 bg-white rounded-full p-4 hover:bg-gradient-to-br hover:from-[#4fadff0f] hover:to-[#ff284c0e] focus:outline-none transition-colors duration-200"
-                    aria-label="Previous testimonial"
-                  >
-                    <svg
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={() => goToNext()}
-                    className="shadow-2xl shadow-black/50 bg-white rounded-full p-4 hover:bg-gradient-to-br hover:from-[#4fadff0f] hover:to-[#ff2c4f0e] focus:outline-none transition-colors duration-200"
-                    aria-label="Next testimonial"
-                  >
-                    <svg
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                <Image
+                  className="absolute rotate-180 -bottom-[70px] right-[50px] text-[400px]"
+                  src={quote_start}
+                  width={150}
+                  alt="Testimonial"
+                />
 
                 <div
                   ref={testimonialRef}
@@ -184,10 +149,17 @@ export default function Testimonials() {
                   }`}
                 >
                   <div className="w-full flex flex-col gap-3 lg:gap-5 items-center bg-gradient-to-br from-[#003e740f] to-[#ef00280e] backdrop-blur-sm rounded-[40px] lg:rounded-[50px] lg:rounded-es p-6 lg:p-8 border border-white shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
-                    <h2 className="font-extrabold text-xl lg:text-3xl text-center text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
+                    <div>
+                      <h3 className="font-extrabold text-lg text-center lg:text-2xl text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-[12px] text-center text-gray-500">
+                        {testimonial.position} at {testimonial.company}
+                      </p>
+                    </div>
+                    <h2 className="font-extrabold mt-1 text-xl lg:text-3xl text-center text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
                       {testimonial.title}
                     </h2>
-
                     <p className="text-black text-center lg:mb-6 text-sm lg:text-[16px] leading-relaxed">
                       "{testimonial.testimonial}"
                     </p>
@@ -198,21 +170,15 @@ export default function Testimonials() {
                 </span>
               </div> */}
                   </div>
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="lg:bg-gradient-to-br from-[#003e7415] to-[#ef002816] lg:backdrop-blur-sm rounded-[30px] lg:rounded-[40px] lg:rounded-ss mt-2 lg:p-8 lg:border border-white lg:shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]">
-                      <h3 className="font-extrabold text-lg lg:text-2xl text-transparent bg-clip-text bg-gradient-to-br from-[#34A1FF] to-[#FF6C85]">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-[12px] text-gray-500">
-                        {testimonial.position} at {testimonial.company}
-                      </p>
-                    </div>
+
+                  {/* <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="lg:bg-gradient-to-br from-[#003e7415] to-[#ef002816] lg:backdrop-blur-sm rounded-[30px] lg:rounded-[40px] lg:rounded-ss mt-2 lg:p-8 lg:border border-white lg:shadow-[-10px_50px_100px_#003e740f,20px_50px_100px_#ef00280e]"></div>
                     <div className=""></div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* Navigation buttons */}
-              <div className="flex z-[1] lg:hidden items-center justify-center gap-5">
+              <div className="flex z-[1] mt-8 items-center justify-center gap-5">
                 <button
                   onClick={() => goToPrevious()}
                   className="shadow-2xl shadow-black/50 bg-white rounded-full p-4 hover:bg-gradient-to-br hover:from-[#4fadff0f] hover:to-[#ff284c0e] focus:outline-none transition-colors duration-200"

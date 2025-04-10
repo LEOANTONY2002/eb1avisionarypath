@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 // import Mission from "./components/Mission";
 
 // Dynamically import client components with ssr disabled
@@ -43,11 +43,13 @@ export default function Home() {
       {isModalOpen && <Calendar closeModal={closeModal} />}
       <Disclaimer />
       <Hero openModal={openModal} />
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <Services />
       <ChooseUs />
       <Pricing openModal={openModal} />
       <Testimonials />
       <FAQ />
+      {/* </Suspense> */}
     </main>
   );
 }
