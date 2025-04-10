@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@next/bundle-analyzer": "^15.3.0",
     "@next/third-parties": "^15.2.5",
     "mongoose": "^8.13.1",
     "next": "^15.2.5",

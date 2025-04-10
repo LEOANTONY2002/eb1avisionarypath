@@ -1,5 +1,5 @@
 import SOL from "@/public/images/SOL.webp";
-import aero from "@/public/images/aero.webp";
+import aero from "@/public/images/aero.svg";
 import Image from "next/image";
 
 const serviceContent = [

@@ -1,11 +1,47 @@
+import { Metadata } from "next";
 import Image from "next/image";
-// import Loading from "@/app/loading";
-import HeroImage from "@/public/images/about-bg.svg";
+import HeroImage from "@/public/images/about-bg.webp";
 import { Montserrat, Playfair_Display, Lavishly_Yours } from "next/font/google";
-import aero from "@/public/images/aero.webp";
-import choose1 from "@/public/images/choose1.webp";
-import choose2 from "@/public/images/choose2.webp";
-import choose3 from "@/public/images/choose3.webp";
+import aero from "@/public/images/aero.svg";
+import core1 from "@/public/images/core1.svg";
+import choose2 from "@/public/images/choose2.svg";
+import core3 from "@/public/images/core3.svg";
+import core4 from "@/public/images/core4.svg";
+
+export const metadata: Metadata = {
+  title: "About Us - EB1A Visionary Path",
+  description:
+    "Learn more about EB1A Visionary Path, our mission, vision, and core values. We are dedicated to guiding EB1A aspirants with personalized support and expert insights.",
+  keywords: [
+    "EB1A Visionary Path",
+    "About EB1A",
+    "Immigration services",
+    "Mission and Vision",
+    "Core values",
+  ],
+  openGraph: {
+    title: "About Us - EB1A Visionary Path",
+    description:
+      "Learn more about EB1A Visionary Path, our mission, vision, and core values. We are dedicated to guiding EB1A aspirants with personalized support and expert insights.",
+    url: "https://eb1avisionarypath.com/about",
+    images: [
+      {
+        url: "/images/about-bg.webp",
+        width: 1200,
+        height: 630,
+        alt: "About Us - EB1A Visionary Path",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - EB1A Visionary Path",
+    description:
+      "Learn more about EB1A Visionary Path, our mission, vision, and core values. We are dedicated to guiding EB1A aspirants with personalized support and expert insights.",
+    images: ["/images/about-bg.webp"],
+  },
+};
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const lavishly = Lavishly_Yours({ subsets: ["latin"], weight: "400" });
@@ -15,7 +51,7 @@ const content = [
   {
     title: "Integrity",
     description: "Transparent and honest assessment of eligibility",
-    img: choose1,
+    img: core1,
   },
   {
     title: "Excellence",
@@ -25,12 +61,12 @@ const content = [
   {
     title: "Commitment",
     description: "Personalized support to strengthen every case",
-    img: choose3,
+    img: core3,
   },
   {
     title: "Innovation",
     description: "Data-driven approach to profile-building",
-    img: choose2,
+    img: core4,
   },
 ];
 
@@ -102,7 +138,7 @@ export default function About() {
         <div className="flex flex-col items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-48 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912]">
           <div className="flex flex-col gap-6">
             <p
-              className={`text-2xl md:text-[32px] text-right -mb-6 ${lavishly.className}`}
+              className={`text-2xl md:text-[32px] text-left -mb-6 ${lavishly.className}`}
             >
               Our
             </p>

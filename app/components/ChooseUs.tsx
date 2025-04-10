@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import aero from "@/public/images/aero.webp";
-import choose1 from "@/public/images/choose1.webp";
-import choose2 from "@/public/images/choose2.webp";
-import choose3 from "@/public/images/choose3.webp";
+import aero from "@/public/images/aero.svg";
+import choose1 from "@/public/images/choose1.svg";
+import choose2 from "@/public/images/choose2.svg";
+import choose3 from "@/public/images/choose3.svg";
 
 const content = [
   {

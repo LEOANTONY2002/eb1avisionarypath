@@ -1,7 +1,5 @@
-"use client";
-
 import { CheckIcon } from "@heroicons/react/24/outline";
-import aero from "@/public/images/aero.webp";
+import aero from "@/public/images/aero.svg";
 import Image from "next/image";
 
 export default function Pricing({ openModal }: { openModal: () => void }) {

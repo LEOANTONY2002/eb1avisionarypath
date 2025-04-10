@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import { Suspense, useEffect, useState } from "react";
-// import Mission from "./components/Mission";
 
 // Dynamically import client components with ssr disabled
 const Hero = dynamic(() => import("./components/Hero"), { ssr: true });
@@ -17,7 +16,7 @@ const Disclaimer = dynamic(() => import("./components/Disclaimer"), {
   ssr: true,
 });
 const Calendar = dynamic(() => import("./components/Calendar"), {
-  ssr: false,
+  ssr: true,
 });
 
 export default function Home() {
@@ -40,16 +39,16 @@ export default function Home() {
 
   return (
     <main id="root" className="bg-white overflow-x-hidden">
-      {isModalOpen && <Calendar closeModal={closeModal} />}
       <Disclaimer />
       <Hero openModal={openModal} />
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <Services />
-      <ChooseUs />
-      <Pricing openModal={openModal} />
-      <Testimonials />
-      <FAQ />
-      {/* </Suspense> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <ChooseUs />
+        <Pricing openModal={openModal} />
+        <Testimonials />
+        <FAQ />
+        {isModalOpen && <Calendar closeModal={closeModal} />}
+      </Suspense>
     </main>
   );
 }

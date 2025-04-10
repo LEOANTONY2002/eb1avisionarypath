@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import footer_bg from "@/public/images/footer.webp";
 import Image from "next/image";
@@ -70,10 +68,10 @@ export default function Footer() {
       <Image
         src={footer_bg}
         alt=""
-        className="absolute w-screen bottom-0 -z-10 h-[70vh]"
-        objectFit="cover"
+        className="absolute w-screen bottom-0 h-[70vh]"
+        fill
       />
-      <div className="mx-auto max-w-7xl text-white overflow-visible px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto z-[1] max-w-7xl text-white overflow-visible px-6 py-20 sm:py-24 lg:px-8">
         <nav
           className="flex justify-center flex-wrap gap-5 space-x-12"
           aria-label="Footer"

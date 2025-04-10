@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImage from "@/public/images/hero-bg.svg";
+import HeroImage from "@/public/images/hero-bg.webp";
 import Chevron from "@/public/images/chevron.svg";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import { useEffect, useState } from "react";

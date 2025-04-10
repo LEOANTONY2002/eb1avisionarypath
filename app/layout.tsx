@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "EB1A Visionary Path",
     images: [
       {
-        url: "/og-image.webp",
+        url: "/hero-bg.webp",
         width: 1200,
         height: 630,
         alt: "EB1A Visionary Path - Expert Immigration Services",

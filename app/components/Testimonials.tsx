@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Loading from "../loading";
-import aero from "@/public/images/aero.webp";
+import aero from "@/public/images/aero.svg";
 import quote_start from "@/public/images/quote_start.webp";
 
 interface Testimonial {

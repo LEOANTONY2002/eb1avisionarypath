@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { useState } from "react";
-import aero from "@/public/images/aero.webp";
+import aero from "@/public/images/aero.svg";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
