@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { CalendarIcon, UserIcon, TagIcon } from "@heroicons/react/24/outline";
 import { use } from "react";
-import Header from "@/app/components/Header";
+import Loading from "@/app/loading";
 
 interface BlogPost {
   _id: string;
@@ -25,8 +25,8 @@ export default function BlogPost({
 }) {
   const { slug } = use(params); // Unwrap the params Promise
 
-  const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
+  const [blog, setBlog] = useState<BlogPost | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -49,33 +49,36 @@ export default function BlogPost({
   }, [slug]);
 
   if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
     return (
-      <div className="flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      <div className="text-center h-screen my-auto py-12">
+        <p className="text-red-500 text-lg font-semibold mb-4">
+          Error: {error}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-6 py-2 bg-gradient-to-r from-[#34A1FF] to-[#ff4747] cursor-pointer text-white rounded-lg"
+        >
+          Retry
+        </button>
       </div>
     );
   }
 
-  if (error || !blog) {
+  if (blog) {
     return (
-      <div className="text-center py-12">
-        <p className="text-red-500">Error: {error || "Blog post not found"}</p>
-      </div>
-    );
-  }
-
-  return (
-    <>
-      <Header />
-      <article className="min-h-screen bg-gray-50 py-12">
+      <article className="min-h-screen py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="relative h-96">
+          <div className=" rounded-[50px] shadow-lg overflow-hidden">
+            <div className="relative m-8 rounded-3xl border border-white/45 h-96">
               <Image
                 src={blog.image}
                 alt={blog.title}
                 fill
-                className="object-cover"
+                className="object-cover rounded-3xl"
               />
             </div>
             <div className="p-8">
@@ -96,7 +99,7 @@ export default function BlogPost({
                 {blog.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
                   >
                     <TagIcon className="h-3 w-3 mr-1" />
                     {tag}
@@ -111,6 +114,6 @@ export default function BlogPost({
           </div>
         </div>
       </article>
-    </>
-  );
+    );
+  }
 }

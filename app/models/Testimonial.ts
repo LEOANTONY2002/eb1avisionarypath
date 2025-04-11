@@ -13,23 +13,17 @@ const testimonialSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  testimonial: {
+  title: {
     type: String,
     required: true,
   },
-  image: {
+  testimonial: {
     type: String,
     required: true,
   },
   visaType: {
     type: String,
     enum: ["EB1A", "O1A", "EB2 NIW"],
-    required: true,
-  },
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
     required: true,
   },
   createdAt: {
