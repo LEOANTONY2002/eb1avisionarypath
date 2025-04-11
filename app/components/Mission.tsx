@@ -16,7 +16,7 @@ const Mission = () => {
           </p>
           <div className="flex flex-col gap-6">
             <p
-              className={`text-2xl md:text-[32px] text-right -mb-6 ${lavishly.className}`}
+              className={`text-2xl md:text-[32px] text-center md:text-right -mb-6 ${lavishly.className}`}
             >
               Our
             </p>
@@ -32,7 +32,7 @@ const Mission = () => {
         <div className="flex flex-col items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-48 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912] border border-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09] transition-all duration-300 ease-in-out">
           <div className="flex flex-col gap-6">
             <p
-              className={`text-2xl md:text-[32px] text-left -mb-6 ${lavishly.className}`}
+              className={`text-2xl md:text-[32px] text-center md:text-left -mb-6 ${lavishly.className}`}
             >
               Our
             </p>

@@ -119,9 +119,9 @@ export default async function seedDatabase() {
         name: "Siva S",
         position: "Senior Software Designer",
         company: "Adobe",
-        title: "Attention to Detail",
+        title: "Professionalism And Clarity",
         testimonial:
-          "EB1A Visionary Path helped me navigate the complex EB1A visa process. Their expertise and attention to detail made all the difference in my successful application.",
+          "I was truly impressed by the professionalism and clarity the EB1A Visionary Path team brought to my case. Their step-by-step assistance made the entire journey smooth and stress-free. I highly recommend them to anyone pursuing an EB1A visa",
         visaType: "EB1A",
       },
       {
@@ -149,6 +149,24 @@ export default async function seedDatabase() {
         title: "Profound Strategic Approach",
         testimonial:
           "The EB1A Visionary Path team's deep understanding of the EB1A requirements and their strategic approach to presenting my case was invaluable. I'm grateful for their support.",
+        visaType: "EB1A",
+      },
+      {
+        name: "Prasad M",
+        position: "Senior Accountant",
+        company: "Citibank",
+        title: "Exceeded My Expectations",
+        testimonial:
+          "EB1A Visionary Path exceeded my expectations with their personalised support and in-depth understanding of the EB1A process. Their strategic guidance and timely communication played a key role in the successful approval of my petition.",
+        visaType: "EB1A",
+      },
+      {
+        name: "Amit T",
+        position: "Assistant Manager",
+        company: "Santander Bank",
+        title: "Game Changer",
+        testimonial:
+          "Working with EB1A Visionary Path was a game-changer. Their team not only provided expert advice but also crafted a compelling case that highlighted my qualifications perfectly. I'm thankful for their dedication and support throughout the process.",
         visaType: "EB1A",
       },
     ];
