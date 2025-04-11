@@ -34,7 +34,7 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
         "Comprehensive documentation of critical roles through influential industry endorsements",
         "Judging participation for reputed academic publications",
       ],
-      featured: true,
+      featured: false,
     },
     {
       name: "Platinum Plan",
@@ -56,7 +56,7 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
         "Comprehensive final merits portfolio for optimal presentation",
         "Introduction to a trusted attorney for further professional guidance",
       ],
-      featured: false,
+      featured: true,
     },
   ];
 
@@ -109,18 +109,18 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
                 <>
                   <div className="absolute bg-gradient-to-br from-[#7cc6ff2d] to-[#ff476927] rounded-full p-2 -top-5 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] px-4 py-1.5 text-xs font-medium text-white shadow-lg">
-                      Most Popular
+                      Recommended
                     </span>
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5" />
                 </>
               )}
 
-              {tier.id == "tier-platinum" && (
+              {tier.id == "tier-gold" && (
                 <>
                   <div className="absolute bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] rounded-full p-2 -top-5 left-1/2 -translate-x-1/2">
                     <span className="inline-flex border border-white items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] bg-clip-text text-transparent px-4 py-1.5 text-xs font-medium shadow-lg">
-                      Recommended
+                      Most Popular
                     </span>
                   </div>
                 </>
@@ -166,7 +166,7 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
                 {tier.featured ? (
                   <button
                     onClick={() => openModal()}
-                    className={`mt-8 block w-full rounded-full px-6 py-4 text-center text-sm text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
+                    className={`mt-8 block w-full rounded-full px-6 py-4 text-center text-white font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] duration-200 ${"bg-gradient-to-r from-[#34A1FF] to-[#FF6C85]"}`}
                   >
                     Get started
                   </button>

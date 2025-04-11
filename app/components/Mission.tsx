@@ -6,7 +6,7 @@ const lavishly = Lavishly_Yours({ subsets: ["latin"], weight: "400" });
 const Mission = () => {
   return (
     <>
-      <section className="mt-80 lg:mt-[450px] max-w-7xl mx-auto text-black">
+      <section className="mt-80 lg:mt-[600px] max-w-7xl mx-auto text-black">
         <div className="flex flex-col-reverse items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-12 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912] border border-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09] transition-all duration-300 ease-in-out">
           <p className="text-sm md:text-lg">
             “To become the most trusted partner for high-achieving professionals

@@ -44,7 +44,7 @@ export default function Hero({ openModal }: { openModal: () => void }) {
         id="home"
         className="relative max-w-screen-md min-h-screen flex flex-col items-center justify-center pt-24 mx-auto "
       >
-        <div className="inline-flex items-center rounded-full bg-white/60 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm font-medium ring-1 ring-inset ring-white/20 shadow-sm">
+        <div className="inline-flex -mt-32 items-center rounded-full bg-white/60 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm font-medium ring-1 ring-inset ring-white/20 shadow-sm">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
@@ -84,7 +84,7 @@ export default function Hero({ openModal }: { openModal: () => void }) {
             <Image src={Chevron} alt={"Chevron Right"} />
           </div>
         </div>
-        <div className="w-screen">
+        <div className="w-screen absolute bottom-2">
           <p className="mt-10 font-black opacity-10 text-5xl lg:text-8xl text-center">
             Let’s Build Your Case
             <span className="inline-flex ml-2">
