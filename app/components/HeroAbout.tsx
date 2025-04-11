@@ -32,7 +32,7 @@ const HeroAbout = () => {
       </h1>
       <div className="border bg-white/15 backdrop-blur-md border-white p-5 rounded-3xl m-2">
         <p
-          className={`my-4 text-sm sm:text-md font-bold  ${montserrat.className}`}
+          className={`my-4 text-sm sm:text-md font-bold text-left ${montserrat.className}`}
         >
           At EB1A Visionary Path, we are dedicated to guiding EB1A aspirants
           with end-to-end support and valuable insights. Our goal is to simplify
