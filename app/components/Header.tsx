@@ -65,18 +65,22 @@ export default function Header() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log(`Section in view: ${entry.target.id}`); // Debugging log
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is visible
+      { threshold: 0.2 } // Lower threshold to trigger earlier
     );
 
     links.forEach((link) => {
       const sectionId = link.href.split("#")[1];
       if (sectionId && sectionId !== "home") {
         const element = document.getElementById(sectionId);
-        if (element) observer.observe(element);
+        if (element) {
+          console.log(`Observing section: ${sectionId}`); // Debugging log
+          observer.observe(element);
+        }
       }
     });
 
@@ -127,12 +131,13 @@ export default function Header() {
   };
 
   const isActive = (href: string) => {
+    const sectionId = href.split("#")[1];
+    console.log(
+      `Checking active section: ${sectionId}, current active: ${activeSection}`
+    ); // Debugging log
     if (pathname.startsWith("/blog")) return href === "/blog";
     if (pathname === "/about") return pathname === href;
-    else {
-      const sectionId = href.split("#")[1];
-      return activeSection === sectionId;
-    }
+    return activeSection === sectionId;
   };
 
   console.log(pathname);

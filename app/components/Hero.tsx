@@ -27,9 +27,9 @@ export default function Hero({ openModal }: { openModal: () => void }) {
   }, []);
 
   return (
-    <div className="relative -mb-[450px] isolate min-h-[150vh] text-black">
+    <div id="home" className="relative isolate min-h-[100vh] text-black">
       {/* Background image */}
-      <div className="absolute w-screen h-[150vh] inset-0 -z-10">
+      <div className="absolute w-screen h-[160vh] inset-0 -z-10">
         <Image
           src={HeroImage}
           alt="Immigration success"

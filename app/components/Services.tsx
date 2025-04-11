@@ -23,14 +23,8 @@ const serviceContent = [
 export default function Services() {
   return (
     <section id="services" className="relative py-24 overflow-hidden ">
-      {/* Background effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-purple-500/5 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
+        <div className="max-w-[80vw] mx-auto lg:max-w-2xl text-center">
           <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-left text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
