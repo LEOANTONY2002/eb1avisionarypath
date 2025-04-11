@@ -54,10 +54,10 @@ export default function Services() {
           {serviceContent.map((service, index) => (
             <article
               key={index}
-              className="group relative isolate flex flex-col justify-end rounded-3xl bg-white/10 backdrop-filter backdrop-blur-sm p-8 shadow-2xl shadow-black/10 transition-all duration-500 hover:-translate-y-1 border border-white/20"
+              className="group relative isolate flex flex-col justify-end rounded-3xl bg-white/10 backdrop-filter backdrop-blur-sm p-8 shadow-2xl shadow-black/10 transition-all duration-300 ease-in-out hover:-translate-y-1 border border-white/20"
             >
               <div
-                className="absolute inset-0 -z-10 rounded-3xl transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-[#003E7412] group-hover:to-[#EF002912]"
+                className="absolute inset-0 -z-10 rounded-3xl group-hover:bg-gradient-to-br group-hover:from-[#003E7412] group-hover:to-[#EF002912]"
                 style={
                   { "--tw-gradient-angle": "120deg" } as React.CSSProperties
                 }
@@ -68,7 +68,7 @@ export default function Services() {
                 alt={service.title}
                 className="-mt-20"
               />
-              <h3 className="mt-6 text-2xl w-max font-semibold leading-8 text-gray-900 transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#34A1FF] group-hover:to-[#ff4747]">
+              <h3 className="mt-6 text-2xl w-max font-semibold leading-8 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#34A1FF] group-hover:to-[#ff4747]">
                 {service.title}
               </h3>
               <p className="mt-4 text-sm leading-7 text-gray-500">

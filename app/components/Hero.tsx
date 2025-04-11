@@ -37,6 +37,7 @@ export default function Hero({ openModal }: { openModal: () => void }) {
           className="object-cover"
           priority
         />
+        <div className="w-screen h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-white"></div>
       </div>
       {/* Main content */}
       <section

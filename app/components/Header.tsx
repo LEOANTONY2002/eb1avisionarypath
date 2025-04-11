@@ -78,7 +78,6 @@ export default function Header() {
       if (sectionId && sectionId !== "home") {
         const element = document.getElementById(sectionId);
         if (element) {
-          console.log(`Observing section: ${sectionId}`); // Debugging log
           observer.observe(element);
         }
       }
@@ -132,15 +131,10 @@ export default function Header() {
 
   const isActive = (href: string) => {
     const sectionId = href.split("#")[1];
-    console.log(
-      `Checking active section: ${sectionId}, current active: ${activeSection}`
-    ); // Debugging log
     if (pathname.startsWith("/blog")) return href === "/blog";
     if (pathname === "/about") return pathname === href;
     return activeSection === sectionId;
   };
-
-  console.log(pathname);
 
   return (
     <>

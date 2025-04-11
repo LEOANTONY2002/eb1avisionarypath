@@ -55,6 +55,7 @@ export default function BlogPage() {
             className="object-cover"
             priority
           />
+          <div className="w-screen h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-white"></div>
         </div>
         <div className="inline-flex items-center mt-52 rounded-full bg-white/60 backdrop-blur-sm px-3 py-1 text-xs sm:text-sm font-medium ring-1 ring-inset ring-white/20 shadow-sm">
           <span className="relative flex h-2 w-2 mr-2">
