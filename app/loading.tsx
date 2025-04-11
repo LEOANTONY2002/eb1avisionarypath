@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Loading() {
   return (
-    <div className="flex bg-white min-h-screen items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center">
       <Image src={Loader} alt="Loading" />
     </div>
   );

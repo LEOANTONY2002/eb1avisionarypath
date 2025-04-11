@@ -23,7 +23,8 @@ const links = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home"); // Set initial active section to "home"
+  const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
   const pathname = usePathname();
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -95,6 +96,22 @@ export default function Header() {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true); // Scale down the logo when scrolled
+      } else {
+        setIsScrolled(false); // Reset the logo size when at the top
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleNavigation = (href: string) => {
     const [path, hash] = href.split("#");
     if (pathname === path) {
@@ -122,7 +139,7 @@ export default function Header() {
 
   return (
     <>
-      {isModalOpen && <Calendar closeModal={closeModal} />}
+      {isModalOpen && <Calendar closeModal={closeModal} root={"root"} />}
 
       <header className="fixed inset-x-0 top-0 z-10 bg-[#ffffff9f] backdrop-blur-md">
         <nav
@@ -131,7 +148,14 @@ export default function Header() {
         >
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Image src={Logo} width={120} alt={"EB1A Visionary Path"} />
+              <Image
+                src={Logo}
+                width={isScrolled ? 80 : 120} // Dynamically scale the logo
+                alt={"EB1A Visionary Path"}
+                className={`transition-all duration-300 ease-in-out ${
+                  isScrolled ? "scale-90" : "scale-100"
+                }`}
+              />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -157,14 +181,14 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-8">
             {links.map((link) => (
               <span
                 key={link.href}
                 onClick={() => handleNavigation(link.href)}
-                className={`text-sm cursor-pointer leading-6 transition-colors duration-150 ease-in-out ${
+                className={`text-sm cursor-pointer leading-6 py-2 px-4 rounded-full transition-all duration-250 ease-in-out ${
                   isActive(link.href)
-                    ? "text-[#ff3838] font-extrabold"
+                    ? "text-[#ff3838] font-extrabold border border-[#ff1d1d]"
                     : "text-gray-900 hover:opacity-60 font-semibold"
                 }`}
               >

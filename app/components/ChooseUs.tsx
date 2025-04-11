@@ -28,12 +28,12 @@ const ChooseUs = () => {
   return (
     <section id="whyus" className="mx-auto py-32 max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-[80vw] lg:max-w-2xl text-center">
-        <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
+        <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-indigo-500/10 px-4 py-1.5 text-sm font-medium text-left text-blue-700 ring-1 ring-inset ring-blue-500/20 mb-4">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
           </span>
-          Expert Immigration Services
+          Extraordinary Ability is Built — Not Just Born.
         </div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Why Choose Us
@@ -56,7 +56,7 @@ const ChooseUs = () => {
         {content.map((item, index) => (
           <div
             key={index}
-            className="relative pt-12 flex flex-col items-center rounded-3xl p-8 bg-white/10 backdrop-filter backdrop-blur-sm shadow-2xl shadow-black/10 transition-all duration-500 hover:-translate-y-1 border border-white/20"
+            className="relative pt-12 flex flex-col items-center rounded-3xl p-8 bg-white/10 backdrop-filter backdrop-blur-sm shadow-2xl shadow-black/10 transition-all duration-500 hover:-translate-y-4 border border-white/20"
           >
             <div className="absolute -top-8 rounded-xl w-max p-3 bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]">
               <Image src={item.img} width={40} alt={item.title} />

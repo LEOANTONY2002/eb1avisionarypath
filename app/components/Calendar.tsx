@@ -4,12 +4,18 @@ import { PopupModal } from "react-calendly";
 import { useEffect } from "react";
 
 const pageSettings = {
-  backgroundColor: "FFF4F4",
+  backgroundColor: "FFFFFF",
   primaryColor: "003E74",
   textColor: "C50606",
 };
 
-const Calendar = ({ closeModal }: { closeModal: () => void }) => {
+const Calendar = ({
+  closeModal,
+  root,
+}: {
+  closeModal: () => void;
+  root: string;
+}) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -20,10 +26,10 @@ const Calendar = ({ closeModal }: { closeModal: () => void }) => {
 
   return (
     <div className="absolute z-30 w-screen h-screen bg-[#fdfeff24] backdrop-blur-lg flex items-center justify-center overflow-y-auto">
-      {document.getElementById("root") && (
+      {document.getElementById(root) && (
         <PopupModal
           url={"https://calendly.com/eb1avisionarypath/30min"}
-          rootElement={document.getElementById("root") as HTMLElement}
+          rootElement={document.getElementById(root) as HTMLElement}
           onModalClose={function (e: React.MouseEvent<HTMLElement>): void {
             closeModal();
           }}

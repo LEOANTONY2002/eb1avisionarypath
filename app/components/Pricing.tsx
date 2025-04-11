@@ -98,7 +98,7 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
         <div className="mx-auto mt-28 grid max-w-lg grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
-              key={tier.name}
+              key={tier.id}
               className={`relative rounded-2xl p-8 m-4 transition-all duration-200 ${
                 tier.featured
                   ? "bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] shadow-xl scale-105 ring-2 ring-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09]"
@@ -110,6 +110,17 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] px-4 py-1.5 text-xs font-medium text-white shadow-lg">
                       Most Popular
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5" />
+                </>
+              )}
+
+              {tier.id == "tier-platinum" && (
+                <>
+                  <div className="absolute bg-white -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex border border-white items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] bg-clip-text text-transparent px-4 py-1.5 text-xs font-medium shadow-lg">
+                      Recommended
                     </span>
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5" />
@@ -152,35 +163,6 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
                 >
                   {tier.description}
                 </p>
-
-                {/* <div className="mt-6 flex items-center gap-x-2">
-                  {tier.featured ? (
-                    <p className="w-max bg-clip-text bg-gradient-to-r from-[#2c5797] to-[#ff2a4e]">
-                      <span
-                        className={
-                          "text-4xl font-bold tracking-tight text-transparent"
-                        }
-                      >
-                        ${tier.price.amount}
-                      </span>
-                    </p>
-                  ) : (
-                    <span
-                      className={
-                        "text-4xl font-bold tracking-tight text-gray-900"
-                      }
-                    >
-                      ${tier.price.amount}
-                    </span>
-                  )}
-                  <span
-                    className={`text-sm font-semibold leading-6 ${
-                      tier.featured ? "text-[#0e3e69]" : "text-gray-600"
-                    }`}
-                  >
-                    (Additional Cost: ~${tier.price.additional} Approx.)
-                  </span>
-                </div> */}
 
                 {tier.featured ? (
                   <button

@@ -47,7 +47,7 @@ export default function Home() {
         <Pricing openModal={openModal} />
         <Testimonials />
         <FAQ />
-        {isModalOpen && <Calendar closeModal={closeModal} />}
+        {isModalOpen && <Calendar closeModal={closeModal} root={"root"} />}
       </Suspense>
     </main>
   );

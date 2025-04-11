@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleTagManager gtmId="GTM-NK4LRNS9" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
