@@ -107,7 +107,7 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
             >
               {tier.featured && (
                 <>
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <div className="absolute bg-gradient-to-br from-[#7cc6ff2d] to-[#ff476927] rounded-full p-2 -top-5 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] px-4 py-1.5 text-xs font-medium text-white shadow-lg">
                       Most Popular
                     </span>
@@ -118,12 +118,11 @@ export default function Pricing({ openModal }: { openModal: () => void }) {
 
               {tier.id == "tier-platinum" && (
                 <>
-                  <div className="absolute bg-white -top-4 left-1/2 -translate-x-1/2">
+                  <div className="absolute bg-gradient-to-br from-[#f8fcff] to-[#fff4f6] rounded-full p-2 -top-5 left-1/2 -translate-x-1/2">
                     <span className="inline-flex border border-white items-center rounded-full bg-gradient-to-br from-[#34A1FF] to-[#FF6C85] bg-clip-text text-transparent px-4 py-1.5 text-xs font-medium shadow-lg">
                       Recommended
                     </span>
                   </div>
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-indigo-500/5" />
                 </>
               )}
 
