@@ -11,8 +11,10 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@next/bundle-analyzer": "^15.3.0",
+    "@next/third-parties": "^15.2.5",
     "mongoose": "^8.13.1",
-    "next": "15.2.4",
+    "next": "^15.2.5",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
     "react-dom": "^19.0.0"
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/node": "^20.17.25",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "18.2.52",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "^10.4.14",

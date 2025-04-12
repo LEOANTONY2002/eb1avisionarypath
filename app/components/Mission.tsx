@@ -1,44 +1,57 @@
-import BG from "@/public/images/vision-bg.png";
-import Image from "next/image";
+import { Playfair_Display, Lavishly_Yours } from "next/font/google";
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: "600" });
+const lavishly = Lavishly_Yours({ subsets: ["latin"], weight: "400" });
 
 const Mission = () => {
   return (
-    <div className="relative gap-12 flex flex-col-reverse w-screen lg:h-screen lg:flex-row">
-      <div className="w-[100vw] flex flex-col p-6 gap-6 justify-end lg:w-[50vw] lg:gap-12 lg:p-24">
-        <div className="flex flex-col">
-          <h1 className="text-2xl lg:text-5xl">Our</h1>
-          <h1 className="text-4xl lg:text-7xl font-black text-transparent bg-gradient-to-r bg-clip-text from-[#0887F6] to-[#003E74]">
-            MISSION
-          </h1>
+    <>
+      <section className="mt-80 lg:mt-[600px] max-w-7xl mx-auto text-black">
+        <div className="flex flex-col-reverse items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-12 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912] border border-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09] transition-all duration-300 ease-in-out">
+          <p className="text-sm md:text-lg">
+            “To become the most trusted partner for high-achieving professionals
+            and entrepreneurs seeking U.S. immigration through EB1A, O1A, and
+            EB2 NIW by offering unparalleled profile-building services that
+            highlight their excellence and global impact.”
+          </p>
+          <div className="flex flex-col gap-6">
+            <p
+              className={`text-2xl md:text-[32px] text-center md:text-right -mb-6 ${lavishly.className}`}
+            >
+              Our
+            </p>
+            <h2
+              className={`text-5xl md:text-[64px] bg-clip-text w-max bg-gradient-to-r from-[#ff6c6c] to-[#e40026] text-transparent ${playfair.className}`}
+            >
+              VISION
+            </h2>
+          </div>
         </div>
-        <p className="text-sm w-[70vw] lg:w-[50vw] lg:text-2xl">
-          “Empowering extraordinary individuals to achieve their immigration
-          goals by providing strategic guidance, compelling evidence-building,
-          and expert insights. We are dedicated to helping professionals and
-          entrepreneurs present their best case for EB1A, O1A, and EB2 NIW
-          categories with clarity, confidence, and credibility.”
-        </p>
-      </div>
-
-      <div className="w-[100vw] flex flex-col p-6 gap-6 items-end lg:w-[50vw] lg:gap-12 lg:p-24">
-        <div className="flex flex-col">
-          <h1 className="text-2xl text-right lg:text-5xl">Our</h1>
-          <h1 className="text-4xl text-right lg:text-7xl font-black text-transparent bg-gradient-to-r bg-clip-text from-[#ff5252] to-[#a90202]">
-            VISION
-          </h1>
+      </section>
+      <section className="mt-32 max-w-7xl mx-auto text-black">
+        <div className="flex flex-col items-center justify-center gap-12 rounded-3xl max-w-[80vw] mx-auto p-12 md:p-24 mb-48 md:flex-row bg-gradient-to-br from-[#003E7412] to-[#EF002912] border border-white hover:shadow-[-10px_20px_60px_var(--shadow1),10px_20px_60px_var(--shadow2)] hover:scale-[1.09] transition-all duration-300 ease-in-out">
+          <div className="flex flex-col gap-6">
+            <p
+              className={`text-2xl md:text-[32px] text-center md:text-left -mb-6 ${lavishly.className}`}
+            >
+              Our
+            </p>
+            <h2
+              className={`text-5xl md:text-[64px] bg-clip-text w-max bg-gradient-to-r from-[#6cb6ff] to-[#0067e4] text-transparent ${playfair.className}`}
+            >
+              MISSION
+            </h2>
+          </div>
+          <p className="text-sm md:text-lg">
+            “Empowering extraordinary individuals to achieve their immigration
+            goals by providing strategic guidance, compelling evidence-building,
+            and expert insights. We are dedicated to helping professionals and
+            entrepreneurs present their best case for EB1A, O1A, and EB2 NIW
+            categories with clarity, confidence, and credibility.”
+          </p>
         </div>
-        <p className="text-sm w-[50vw] text-right lg:text-2xl">
-          “To become the most trusted partner for high-achieving professionals
-          and entrepreneurs seeking U.S. immigration through EB1A, O1A, and EB2
-          NIW by offering unparalleled profile-building services that highlight
-          their excellence and global impact.”
-        </p>
-      </div>
-
-      <div className="absolute inset-0 bg-[#E9F5FF] -z-10">
-        <Image src={BG} alt="Mission" fill className="object-cover" priority />
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
