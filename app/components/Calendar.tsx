@@ -3,12 +3,6 @@
 import { PopupModal } from "react-calendly";
 import { useEffect } from "react";
 
-const pageSettings = {
-  backgroundColor: "FFFFFF",
-  primaryColor: "003E74",
-  textColor: "C50606",
-};
-
 const Calendar = ({
   closeModal,
   root,
@@ -34,7 +28,6 @@ const Calendar = ({
             closeModal();
           }}
           open={true}
-          pageSettings={pageSettings}
         />
       )}
     </div>

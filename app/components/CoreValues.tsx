@@ -87,7 +87,13 @@ const CoreValues = () => {
 
         <div className="my-32 mx-auto w-max flex sm:flex-row gap-4 items-center justify-center sm:justify-start">
           <div
-            onClick={() => openModal()}
+            onClick={() => {
+              window.dataLayer?.push({
+                event: "button_click",
+                button_name: "About_Book_Consultation",
+              });
+              openModal();
+            }}
             className="cursor-pointer lg:px-32 px-10 flex gap-3 items-center sm:px-32 py-5 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
           >
             <span className="lg:text-lg">Book a Free Consultation</span>

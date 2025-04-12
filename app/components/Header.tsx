@@ -197,7 +197,16 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <div className="w-max px-3 flex gap-2 items-center sm:px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)] ">
-              <span className="" onClick={() => setIsModalOpen(true)}>
+              <span
+                className=""
+                onClick={() => {
+                  window.dataLayer?.push({
+                    event: "button_click",
+                    button_name: "Contact",
+                  });
+                  setIsModalOpen(true);
+                }}
+              >
                 Contact Us
               </span>
               <Image src={Chevron} alt={"Chevron Right"} />
@@ -233,6 +242,10 @@ export default function Header() {
                 href="/#"
                 className="block m-2 px-6 py-3 bg-gradient-to-r text-center text-white from-[#34A1FF] to-[#ff4747] rounded-full cursor-pointer shadow-[-10px_20px_40px_var(--shadow1),10px_20px_40px_var(--shadow2)]"
                 onClick={() => {
+                  window.dataLayer?.push({
+                    event: "button_click",
+                    button_name: "Contact",
+                  });
                   setIsMenuOpen(false);
                   setIsModalOpen(true);
                 }}
