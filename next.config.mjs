@@ -9,19 +9,19 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async headers() {
-    return [
-      {
-        source: "/(.*)", // Cache all files
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable", // Cache for 1 year
-          },
-        ],
-      },
-    ];
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/(.*)", // Cache all files
+  //       headers: [
+  //         {
+  //           key: "Cache-Control",
+  //           value: "public, max-age=31536000, immutable", // Cache for 1 year
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
 
 // export default withBundleAnalyzer(nextConfig);
