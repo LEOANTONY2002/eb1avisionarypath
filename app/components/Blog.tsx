@@ -121,10 +121,6 @@ export default function Blog() {
                   <CalendarIcon className="h-4 w-4 mr-1" />
                   {new Date(blog.createdAt).toLocaleDateString()}
                 </div>
-                <div className="flex items-center ml-4">
-                  <UserIcon className="h-4 w-4 mr-1" />
-                  {blog.author}
-                </div>
               </div>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 {blog.title}
