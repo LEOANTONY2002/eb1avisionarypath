@@ -22,7 +22,7 @@ const Calendar = ({
     <div className="absolute z-30 w-screen h-screen bg-[#fdfeff24] backdrop-blur-lg flex items-center justify-center overflow-y-auto">
       {document.getElementById(root) && (
         <PopupModal
-          url={"https://calendly.com/eb1avisionarypath/30min"}
+          url={"https://calendly.com/eb1avisionarypath-info/30min"}
           rootElement={document.getElementById(root) as HTMLElement}
           onModalClose={function (e: React.MouseEvent<HTMLElement>): void {
             closeModal();
