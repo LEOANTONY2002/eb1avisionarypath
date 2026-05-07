@@ -112,6 +112,19 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} EB1A Visionary Path. All rights
           reserved.
         </p>
+        <div className="mt-2 flex justify-center space-x-4 text-xs leading-5 opacity-70">
+          <Link href="/privacy-policy" className="hover:opacity-100 hover:underline">
+            Privacy Policy
+          </Link>
+          <span className="opacity-30">|</span>
+          <Link href="/terms-of-use" className="hover:opacity-100 hover:underline">
+            Terms of Use
+          </Link>
+          <span className="opacity-30">|</span>
+          <Link href="/refund-policy" className="hover:opacity-100 hover:underline">
+            Refund Policy
+          </Link>
+        </div>
         <div className="absolute bottom-0 left-0 w-screen mt-10 p-5 bg-white/40 text-center text-xs leading-5">
           <p>
             <strong>Disclaimer: </strong> At EB1A Visionary Path, we aim to
